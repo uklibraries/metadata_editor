@@ -1,0 +1,20 @@
+<%= simple_form_for(@record) do |f| %>
+
+  <div class="field">
+
+    <%= f.input :abstracttxt %> 
+    <%= f.input :title %> 
+    <%= f.association :format %> 
+    <%= f.association :type %>
+    <%= f.input :date %> 
+    <%= f.association :language %> 
+    <%= f.association :archival_container_format %> 
+    <%= f.association :subject %> 
+    <%= f.association :fileformat %> 
+    <%= f.association :kytopic %> 
+    <%= f.association :repository %>
+ </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

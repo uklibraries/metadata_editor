@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      DCMI Repository Vocabulary XML Schema
+
+      Created 2013-07-00
+
+      Created by 
+
+      Eric Weig (eweig@email.uky.edu)
+
+
+      This schema defines a simpleRepository which enumerates
+      the allowable values for the DCMI Repository Vocabulary for the Kentucky Digital Library.  
+    </xs:documentation>
+
+ 
+  </xs:annotation>
+
+
+  <xs:simpleRepository name="DCMIRepository">
+     <xs:union>
+        <xs:simpleRepository>
+           <xs:restriction base="xs:Name">
+		<xs:enumeration value="Appalshop Inc."/>
+		<xs:enumeration value="Asbury College"/>
+		<xs:enumeration value="Berea College"/>
+		<xs:enumeration value="Centre College"/>
+		<xs:enumeration value="Eastern Kentucky University"/>
+		<xs:enumeration value="Georgetown College"/>
+		<xs:enumeration value="International Code Council"/>
+		<xs:enumeration value="Jeffersontown Historical Museum"/>
+		<xs:enumeration value="Jessamine County Public Library"/>
+		<xs:enumeration value="Keeneland Racing Association"/>
+		<xs:enumeration value="Kentucky Department for Libraries and Archives"/>
+		<xs:enumeration value="Kentucky Historical Society"/>
+		<xs:enumeration value="Kentucky State University"/>
+		<xs:enumeration value="Lexington Fayette Urban County Government"/>
+		<xs:enumeration value="Lexington Public Library"/>
+		<xs:enumeration value="Louisville Free Public Library"/>
+		<xs:enumeration value="Montgomery County Historical Society"/>
+		<xs:enumeration value="Morehead State University"/>
+		<xs:enumeration value="Murray State University"/>
+		<xs:enumeration value="Northern Kentucky University"/>
+		<xs:enumeration value="The Filson Historical Society"/>
+		<xs:enumeration value="Transylvania University"/>
+		<xs:enumeration value="University of Kentucky"/>
+		<xs:enumeration value="University of Louisville"/>
+		<xs:enumeration value="Western Kentucky University"/>
+            </xs:restriction>
+        </xs:simpleRepository> 
+     </xs:union>
+  </xs:simpleRepository>
+
+</xs:schema>

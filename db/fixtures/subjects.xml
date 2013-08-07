@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      DCMI Subject Vocabulary XML Schema
+
+      Created 2013-01-01
+
+      Created by 
+
+      Eric Weig (eweig@email.uky.edu)
+
+
+      This schema defines a simpleSubject which enumerates
+      the allowable values for the DCMI Subject Vocabulary for the Kentucky Digital Library.  These are a local set of topics concerning Kentucky history.  These terms on our part are an attempt to allow for the topic identification of materials for KDL display.  These topics are meant to be utilized in combination with Keyword, LCSH (Library of Congress Subject Headings), TGM I (Thesaurus for Graphic Materials I), and TGM II (Thesaurus for Graphic Materials).
+    </xs:documentation>
+
+ 
+  </xs:annotation>
+
+
+  <xs:simpleSubject name="DCMISubject">
+     <xs:union>
+        <xs:simpleSubject>
+           <xs:restriction base="xs:Name">
+		<xs:enumeration value="African American history"/>
+		<xs:enumeration value="Agriculture"/>
+		<xs:enumeration value="Appalachia"/>
+		<xs:enumeration value="Authors"/>
+		<xs:enumeration value="Bourbon Industry"/>
+		<xs:enumeration value="Business (business records)"/>
+		<xs:enumeration value="Coal Mining"/>
+		<xs:enumeration value="Equine Industry"/>
+		<xs:enumeration value="Family and Local History"/>
+		<xs:enumeration value="Medicine"/>
+		<xs:enumeration value="Military History"/>
+		<xs:enumeration value="Politics and Public Policy"/>
+		<xs:enumeration value="Sports History"/>
+		<xs:enumeration value="Tobacco"/>
+		<xs:enumeration value="University of Kentucky"/>
+		<xs:enumeration value="Women's history"/>
+            </xs:restriction>
+        </xs:simpleSubject> 
+     </xs:union>
+  </xs:simpleSubject>
+
+</xs:schema>

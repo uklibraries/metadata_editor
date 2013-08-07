@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified">
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      DCMI KyTopics Vocabulary XML Schema
+
+      Created 2013-07-00
+
+      Created by 
+
+      Eric Weig (eweig@email.uky.edu)
+
+
+      This schema defines a simpleKyTopics which enumerates
+      the allowable values for the DCMI KyTopics Vocabulary for the Kentucky Digital Library.  
+    </xs:documentation>
+
+ 
+  </xs:annotation>
+
+
+  <xs:simpleKyTopics name="DCMIKyTopics">
+     <xs:union>
+        <xs:simpleKyTopics>
+           <xs:restriction base="xs:Name">
+		<xs:enumeration value="African American history"/>
+		<xs:enumeration value="Agriculture"/>
+		<xs:enumeration value="Appalachia"/>
+		<xs:enumeration value="Authors"/>
+		<xs:enumeration value="Bourbon Industry"/>
+		<xs:enumeration value="Business (business records)"/>
+		<xs:enumeration value="Coal Mining"/>
+		<xs:enumeration value="Equine Industry"/>
+		<xs:enumeration value="Family and Local History"/>
+		<xs:enumeration value="Medicine"/>
+		<xs:enumeration value="Military History"/>
+		<xs:enumeration value="Politics and Public Policy"/>
+		<xs:enumeration value="Sports History"/>
+		<xs:enumeration value="Tobacco"/>
+		<xs:enumeration value="University of Kentucky"/>
+		<xs:enumeration value="Womenís history"/>
+            </xs:restriction>
+        </xs:simpleKyTopics> 
+     </xs:union>
+  </xs:simpleKyTopics>
+
+</xs:schema>
