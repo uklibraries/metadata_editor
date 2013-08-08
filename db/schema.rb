@@ -56,8 +56,21 @@ ActiveRecord::Schema.define(:version => 20130806185100) do
     t.integer "record_id"
   end
 
-# Could not dump table "records" because of following StandardError
-#   Unknown type 'abstract' for column 'string'
+  create_table "records", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "format_id"
+    t.integer  "type_id"
+    t.date     "date"
+    t.integer  "archival_container_format_id"
+    t.integer  "subject_id"
+    t.integer  "fileformat_id"
+    t.integer  "kytopic_id"
+    t.integer  "repository_id"
+    t.integer  "abstract_id"
+    t.text     "abstracttxt"
+  end
 
   create_table "repositories", :force => true do |t|
     t.string   "name"
