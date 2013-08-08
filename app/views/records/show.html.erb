@@ -27,8 +27,12 @@
   <%= @record.date %>
 </p>
 <p>
-  <b>Language:</b>
-  <%= @record.language.collect {|l| l.name}.sort.join(',')  %>
+  <b>Languages:</b>
+  <ul>
+    <% @record.languages.each do |language| %>
+    <li><%= render language %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
@@ -38,8 +42,12 @@
 
 
 <p>
-  <b>Subject:</b>
-  <%= render  @record.subject  %>
+  <b>Subjects:</b>
+  <ul>
+    <% @record.subjects.each do |subject| %>
+    <li><%= render subject %></li>
+    <% end %>
+  </ul>
 </p>
 
 
