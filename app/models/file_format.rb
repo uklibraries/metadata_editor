@@ -1,4 +1,4 @@
-class Fileformat < ActiveRecord::Base
+class FileFormat < ActiveRecord::Base
   attr_accessible :name
   has_many :records  
 end
