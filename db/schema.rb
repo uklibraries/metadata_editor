@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808125937) do
+ActiveRecord::Schema.define(:version => 20130808131332) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string "name"
   end
 
-  create_table "fileformats", :force => true do |t|
+  create_table "file_formats", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20130808125937) do
     t.date     "date"
     t.integer  "archival_container_format_id"
     t.integer  "subject_id"
-    t.integer  "fileformat_id"
+    t.integer  "file_format_id"
     t.integer  "kytopic_id"
     t.integer  "repository_id"
     t.text     "abstract"

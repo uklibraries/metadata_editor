@@ -23,7 +23,7 @@ end
   :type,
   :archival_container_format,
   :subject,
-  :fileformat,
+  :file_format,
   :kytopic,
   :repository,
 ].each do |symbol|
