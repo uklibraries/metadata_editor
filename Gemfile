@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 2.3.2.1'
 
 gem 'simple_form'
 gem 'nokogiri'
