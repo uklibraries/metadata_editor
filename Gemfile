@@ -38,3 +38,7 @@ gem 'nokogiri'
 
 # To use debugger
 # gem 'debugger'
+
+group :development do
+  gem 'rails-erd'
+end

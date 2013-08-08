@@ -11,19 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130807205808) do
-
-  create_table "abstracts", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130808132337) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string "name"
   end
 
-  create_table "fileformats", :force => true do |t|
+  create_table "file_formats", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -56,8 +50,31 @@ ActiveRecord::Schema.define(:version => 20130807205808) do
     t.integer "record_id"
   end
 
-# Could not dump table "records" because of following StandardError
-#   Unknown type 'abstract' for column 'string'
+  create_table "records", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "format_id"
+    t.integer  "type_id"
+    t.date     "date"
+    t.integer  "archival_container_format_id"
+    t.integer  "file_format_id"
+    t.integer  "kytopic_id"
+    t.integer  "repository_id"
+    t.text     "abstract"
+    t.string   "department"
+    t.string   "street_address"
+    t.string   "email"
+    t.string   "url"
+    t.string   "phone"
+    t.string   "depositor"
+    t.string   "depositor_email"
+  end
+
+  create_table "records_subjects", :force => true do |t|
+    t.integer "record_id"
+    t.integer "subject_id"
+  end
 
   create_table "repositories", :force => true do |t|
     t.string   "name"
