@@ -19,3 +19,7 @@ pickle-email-*.html
 .project
 /config/database.yml
 *.swp
+
+# Don't risk checking the ERD in
+erd.pdf
+public/erd.pdf
