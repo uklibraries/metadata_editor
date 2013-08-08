@@ -11,15 +11,23 @@
     <%= f.input :depositor %>
     <%= f.input :depositor_email %>
     <%= f.input :title %> 
-    <%= f.association :format %> 
-    <%= f.association :type %>
+    <%= f.association :format, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :type, 
+          input_html: { class: 'chosen-select' } %>
     <%= f.input :date %> 
-    <%= f.association :languages %> 
-    <%= f.association :archival_container_format %> 
-    <%= f.association :subjects %> 
-    <%= f.association :file_format %> 
-    <%= f.association :kytopic %> 
-    <%= f.association :repository %>
+    <%= f.association :languages, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :archival_container_format, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :subjects, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :file_format, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :kytopic, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :repository, 
+          input_html: { class: 'chosen-select' } %>
  </div>
   <div class="actions">
     <%= f.submit %>
