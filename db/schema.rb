@@ -11,10 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808132337) do
+ActiveRecord::Schema.define(:version => 20130812124247) do
 
   create_table "archival_container_formats", :force => true do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "file_formats", :force => true do |t|
@@ -36,45 +38,58 @@ ActiveRecord::Schema.define(:version => 20130808132337) do
   end
 
   create_table "languages", :force => true do |t|
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
     t.string   "name"
     t.string   "name_fr"
+    t.string   "alpha2"
     t.string   "alpha3_bib"
     t.string   "alpha3_term"
-    t.string   "alpha2"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "languages_records", :force => true do |t|
+  create_table "languages_records", :id => false, :force => true do |t|
     t.integer "language_id"
     t.integer "record_id"
   end
 
+  add_index "languages_records", ["language_id", "record_id"], :name => "index_languages_records_on_language_id_and_record_id"
+  add_index "languages_records", ["record_id"], :name => "index_languages_records_on_record_id"
+
   create_table "records", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-    t.integer  "format_id"
-    t.integer  "type_id"
-    t.date     "date"
-    t.integer  "archival_container_format_id"
-    t.integer  "file_format_id"
-    t.integer  "kytopic_id"
-    t.integer  "repository_id"
     t.text     "abstract"
+    t.date     "date"
     t.string   "department"
-    t.string   "street_address"
-    t.string   "email"
-    t.string   "url"
-    t.string   "phone"
     t.string   "depositor"
     t.string   "depositor_email"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "street_address"
+    t.string   "title"
+    t.string   "url"
+    t.integer  "archival_container_format_id"
+    t.integer  "file_format_id"
+    t.integer  "format_id"
+    t.integer  "kytopic_id"
+    t.integer  "repository_id"
+    t.integer  "type_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
-  create_table "records_subjects", :force => true do |t|
+  add_index "records", ["archival_container_format_id"], :name => "index_records_on_archival_container_format_id"
+  add_index "records", ["file_format_id"], :name => "index_records_on_file_format_id"
+  add_index "records", ["format_id"], :name => "index_records_on_format_id"
+  add_index "records", ["kytopic_id"], :name => "index_records_on_kytopic_id"
+  add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
+  add_index "records", ["type_id"], :name => "index_records_on_type_id"
+
+  create_table "records_subjects", :id => false, :force => true do |t|
     t.integer "record_id"
     t.integer "subject_id"
   end
+
+  add_index "records_subjects", ["record_id", "subject_id"], :name => "index_records_subjects_on_record_id_and_subject_id"
+  add_index "records_subjects", ["subject_id"], :name => "index_records_subjects_on_subject_id"
 
   create_table "repositories", :force => true do |t|
     t.string   "name"
@@ -86,11 +101,6 @@ ActiveRecord::Schema.define(:version => 20130808132337) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "subjects_records", :force => true do |t|
-    t.integer "subjects_id"
-    t.integer "records_id"
   end
 
   create_table "types", :force => true do |t|
