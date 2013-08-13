@@ -1,8 +1,36 @@
 <%= simple_form_for(@record) do |f| %>
 
   <div class="field">
+    <p>
+        <b> Required Fields </b>
+    </p>
 
     <%= f.input :abstract %> 
+    <%= f.association :format, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :kytopic, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :languages, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :type, 
+          input_html: { class: 'chosen-select' } %>
+    <%= f.input :rights %> 
+    <%= f.input :title %> 
+
+    <p>
+        <b> Required If Available </b>
+    </p>
+    <%= f.input :date %> 
+    <%= f.association :archival_container_format, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :subjects, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :file_format, 
+          input_html: { class: 'chosen-select' } %> 
+    <%= f.association :repository, 
+          input_html: { class: 'chosen-select' } %>
+
+
     <%= f.input :department %>
     <%= f.input :street_address %>
     <%= f.input :email %>
@@ -10,24 +38,7 @@
     <%= f.input :phone %>
     <%= f.input :depositor %>
     <%= f.input :depositor_email %>
-    <%= f.input :title %> 
-    <%= f.association :format, 
-          input_html: { class: 'chosen-select' } %> 
-    <%= f.association :type, 
-          input_html: { class: 'chosen-select' } %>
-    <%= f.input :date %> 
-    <%= f.association :languages, 
-          input_html: { class: 'chosen-select' } %> 
-    <%= f.association :archival_container_format, 
-          input_html: { class: 'chosen-select' } %> 
-    <%= f.association :subjects, 
-          input_html: { class: 'chosen-select' } %> 
-    <%= f.association :file_format, 
-          input_html: { class: 'chosen-select' } %> 
-    <%= f.association :kytopic, 
-          input_html: { class: 'chosen-select' } %> 
-    <%= f.association :repository, 
-          input_html: { class: 'chosen-select' } %>
+
  </div>
   <div class="actions">
     <%= f.submit %>

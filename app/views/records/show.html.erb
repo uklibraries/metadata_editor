@@ -3,7 +3,6 @@
   <b> Account Information </b>
 </p>
 
-
 <p>
   <b>Abstract:</b>
   <%= @record.abstract %>
@@ -15,18 +14,15 @@
   <%= @record.department %>
 </p>
 
-
 <p>
   <b>Street Address:</b>
   <%= @record.street_address %>
 </p>
 
-
 <p>
   <b>email:</b>
   <%= @record.email %>
 </p>
-
 
 <p>
   <b>url:</b>
@@ -34,18 +30,15 @@
 </p>
 <p>
 
-
 <p>
   <b>phone:</b>
   <%= @record.phone %>
 </p>
 
-
 <p>
   <b>depositor:</b>
   <%= @record.depositor %>
 </p>
-
 
 <p>
   <b>depositor email:</b>
@@ -53,21 +46,15 @@
 </p>
 
 <p>
-  <b>Title:</b>
-  <%= @record.title %>
-</p>
-<p>
   <b>Format:</b>
   <%= render @record.format %>
 </p>
+
 <p>
-  <b>Type:</b>
-  <%= render @record.type %>
+  <b>KY Topic:</b>
+  <%= render @record.kytopic %>
 </p>
-<p>
-  <b>Date:</b>
-  <%= @record.date %>
-</p>
+
 <p>
   <b>Languages:</b>
   <ul>
@@ -77,11 +64,31 @@
   </ul>
 </p>
 
+
+<p>
+  <b>Type:</b>
+  <%= render @record.type %>
+</p>
+
+<p>
+  <b>Rights:</b>
+  <%= @record.rights %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @record.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @record.date %>
+</p>
+
 <p>
   <b>Archival Container Format:</b>
   <%= render @record.archival_container_format %>
 </p>
-
 
 <p>
   <b>Subjects:</b>
@@ -92,22 +99,17 @@
   </ul>
 </p>
 
-
 <p>
   <b>File Format:</b>
   <%= render  @record.file_format  %>
 </p>
 
 <p>
-  <b>KY Topic:</b>
-  <%= render @record.kytopic %>
-</p>
-
-
-<p>
   <b>Repository:</b>
   <%= render @record.repository %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_record_path(@record) %> 
 <%= link_to 'Back', records_path %>
