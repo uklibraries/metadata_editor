@@ -1,5 +1,5 @@
 class Record < ActiveRecord::Base
-  attr_accessible :abstract, :archival_container_format_id, :date, :department, :depositor, :depositor_email, :email, :file_format_id, :format_id, :kytopic_id,  :language_ids, :phone, :repository_id, :street_address, :subject_ids, :title, :type_id, :url
+  attr_accessible :abstract, :archival_container_format_id, :date, :department, :depositor, :depositor_email, :email, :file_format_id, :format_id, :kytopic_id,  :language_ids, :phone, :repository_id, :rights, :street_address, :subject_ids, :title, :type_id, :url
   belongs_to :format
   belongs_to :type
   has_and_belongs_to_many :languages
@@ -8,5 +8,13 @@ class Record < ActiveRecord::Base
   belongs_to :file_format
   belongs_to :kytopic
   belongs_to :repository
+
+  after_initialize :add_default_values
+
+  def add_default_values
+    if self.new_record?
+      self.rights = RecordConfig[:rights]
+    end
+  end
 end
 
