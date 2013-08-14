@@ -8,5 +8,13 @@ class Record < ActiveRecord::Base
   belongs_to :file_format
   belongs_to :kytopic
   belongs_to :repository
+
+  after_initialize :add_default_values
+
+  def add_default_values
+    if self.new_record?
+      self.rights = RecordConfig[:rights]
+    end
+  end
 end
 
