@@ -47,5 +47,7 @@ end
 before "deploy:assets:precompile" do
   run [
     "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
+    "rm #{release_path}/config/initializers/secret_token.rb",
+    "ln -nfs #{shared_path}/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb",
   ].join(" && ")
 end
