@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814185000) do
+ActiveRecord::Schema.define(:version => 20130815151159) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20130814185000) do
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
     t.text     "rights",                       :limit => 255
-    t.text     "creator",                      :limit => 255
-    t.text     "source",                       :limit => 255
+    t.string   "creator"
+    t.string   "source"
   end
 
   add_index "records", ["archival_container_format_id"], :name => "index_records_on_archival_container_format_id"
