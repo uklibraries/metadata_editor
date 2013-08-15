@@ -1,0 +1,14 @@
+<%= simple_form_for(@repository) do |f| %>
+  <% [
+       :name,
+       :email,
+       :url,
+       :street_address,
+       :abstract,
+     ].each do |field|
+     %>
+    <%= f.input field, tooltip: I18n.t("repository.#{field}") %>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>

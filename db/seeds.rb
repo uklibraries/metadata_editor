@@ -25,7 +25,7 @@ end
   :subject,
   :file_format,
   :kytopic,
-  :repository,
+  :repository, # TODO give repository its own seed method
 ].each do |symbol|
   seed = Seed.new :symbol => symbol
   seed.plant
