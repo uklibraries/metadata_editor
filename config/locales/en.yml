@@ -10,6 +10,8 @@ en:
 
     archival_container_format: This is the archival container format.
 
+    creator: This is the creator.
+
     date: This is the date.
 
     department: This is the department.
@@ -34,6 +36,8 @@ en:
 
     rights: This is the rights statement.
             It can stretch over multiple lines.
+
+    source: This is the source.
 
     street_address: This is the street address.
 

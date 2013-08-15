@@ -21,9 +21,9 @@
     <p>
         <b> Required If Available </b>
     </p>
-    <%= f.input :creator %>
+    <%= f.input :creator, tooltip: I18n.t('records.creator') %>
     <%= f.input :date, tooltip: I18n.t('records.date') %> 
-    <%= f.input :source %>
+    <%= f.input :source, tooltip: I18n.t('records.source') %>
 
     <p>
         <b> Recommended </b>
