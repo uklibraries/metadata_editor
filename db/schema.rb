@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815151159) do
+ActiveRecord::Schema.define(:version => 20130815190324) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -56,16 +56,9 @@ ActiveRecord::Schema.define(:version => 20130815151159) do
   add_index "languages_records", ["record_id"], :name => "index_languages_records_on_record_id"
 
   create_table "records", :force => true do |t|
-    t.text     "abstract"
     t.date     "date"
-    t.string   "department"
-    t.string   "depositor"
-    t.string   "depositor_email"
-    t.string   "email"
     t.string   "phone"
-    t.string   "street_address"
     t.string   "title"
-    t.string   "url"
     t.integer  "archival_container_format_id"
     t.integer  "file_format_id"
     t.integer  "format_id"
@@ -96,8 +89,12 @@ ActiveRecord::Schema.define(:version => 20130815151159) do
 
   create_table "repositories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.text     "abstract"
+    t.string   "street_address"
+    t.string   "email"
+    t.string   "url"
   end
 
   create_table "subjects", :force => true do |t|
