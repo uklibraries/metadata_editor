@@ -1,5 +1,5 @@
 class Record < ActiveRecord::Base
-  attr_accessible :abstract, :archival_container_format_id, :creator, :date, :department, :depositor, :depositor_email, :email, :file_format_id, :format_id, :kytopic_id,  :language_ids, :phone, :repository_id, :rights, :source, :street_address, :subject_ids, :title, :type_id, :url
+  attr_accessible :archival_container_format_id, :creator, :date, :file_format_id, :format_id, :kytopic_id,  :language_ids, :repository_id, :rights, :source, :subject_ids, :title, :type_id
   belongs_to :format
   belongs_to :type
   has_and_belongs_to_many :languages
@@ -17,7 +17,7 @@ class Record < ActiveRecord::Base
     end
   end
 
-  validates :abstract, :format_id, :kytopic_id, :language_ids, :rights, :type_id, :title, presence: true
+  validates :format_id, :kytopic_id, :language_ids, :rights, :type_id, :title, presence: true
 
 end
 

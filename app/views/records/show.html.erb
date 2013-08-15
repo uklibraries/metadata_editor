@@ -1,51 +1,5 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <b> Account Information </b>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @record.abstract %>
-</p>
-<p>
-
-<p>
-  <b>Department:</b>
-  <%= @record.department %>
-</p>
-
-<p>
-  <b>Street Address:</b>
-  <%= @record.street_address %>
-</p>
-
-<p>
-  <b>email:</b>
-  <%= @record.email %>
-</p>
-
-<p>
-  <b>url:</b>
-  <%= @record.url %>
-</p>
-<p>
-
-<p>
-  <b>phone:</b>
-  <%= @record.phone %>
-</p>
-
-<p>
-  <b>depositor:</b>
-  <%= @record.depositor %>
-</p>
-
-<p>
-  <b>depositor email:</b>
-  <%= @record.depositor_email %>
-</p>
-
-<p>
   <b>Format:</b>
   <%= render @record.format %>
 </p>
@@ -115,7 +69,7 @@
 
 <p>
   <b>Repository:</b>
-  <%= render @record.repository %>
+  <%= @record.repository.name %>
 </p>
 
 

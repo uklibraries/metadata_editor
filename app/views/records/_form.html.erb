@@ -34,17 +34,6 @@
           input_html: { class: 'chosen-select' } %> 
     <%= f.association :file_format, tooltip: I18n.t('records.file_format'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :repository, tooltip: I18n.t('records.repository'),
-          input_html: { class: 'chosen-select' } %>
-
-    <%# TODO: move to repository model %>
-    <%= f.input :department, tooltip: I18n.t('records.department') %>
-    <%= f.input :street_address, tooltip: I18n.t('records.street_address') %>
-    <%= f.input :email, tooltip: I18n.t('records.email') %>
-    <%= f.input :url, tooltip: I18n.t('records.url') %>
-    <%= f.input :phone, tooltip: I18n.t('records.phone') %>
-    <%= f.input :depositor, tooltip: I18n.t('records.depositor') %>
-    <%= f.input :depositor_email, tooltip: I18n.t('records.depositor_email') %>
 
  </div>
   <div class="actions">
