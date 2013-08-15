@@ -20,7 +20,13 @@
     <p>
         <b> Required If Available </b>
     </p>
+    <%= f.input :creator %>
     <%= f.input :date %> 
+    <%= f.input :source %>
+
+    <p>
+        <b> Recommended </b>
+    </p>
     <%= f.association :archival_container_format, 
           input_html: { class: 'chosen-select' } %> 
     <%= f.association :subjects, 
