@@ -1,4 +1,5 @@
 MetadataEditor::Application.routes.draw do
+  resources :repositories
   resources :records
 
 
