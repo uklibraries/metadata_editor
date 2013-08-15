@@ -5,45 +5,46 @@
         <b> Required Fields </b>
     </p>
 
-    <%= f.input :abstract %> 
-    <%= f.association :format, 
+    <%# TODO: automatically load tooltips %>
+    <%= f.input :abstract, tooltip: I18n.t('records.abstract') %> 
+    <%= f.association :format, tooltip: I18n.t('records.format'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :kytopic, 
+    <%= f.association :kytopic, tooltip: I18n.t('records.kytopic'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :languages, 
+    <%= f.association :languages, tooltip: I18n.t('records.languages'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :type, 
+    <%= f.association :type, tooltip: I18n.t('records.type'),
           input_html: { class: 'chosen-select' } %>
-    <%= f.input :rights %> 
-    <%= f.input :title %> 
+    <%= f.input :rights, tooltip: I18n.t('records.rights') %> 
+    <%= f.input :title, tooltip: I18n.t('records.title') %> 
 
     <p>
         <b> Required If Available </b>
     </p>
     <%= f.input :creator %>
-    <%= f.input :date %> 
+    <%= f.input :date, tooltip: I18n.t('records.date') %> 
     <%= f.input :source %>
 
     <p>
         <b> Recommended </b>
     </p>
-    <%= f.association :archival_container_format, 
+    <%= f.association :archival_container_format, tooltip: I18n.t('records.archival_container_format'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :subjects, 
+    <%= f.association :subjects, tooltip: I18n.t('records.subjects'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :file_format, 
+    <%= f.association :file_format, tooltip: I18n.t('records.file_format'),
           input_html: { class: 'chosen-select' } %> 
-    <%= f.association :repository, 
+    <%= f.association :repository, tooltip: I18n.t('records.repository'),
           input_html: { class: 'chosen-select' } %>
 
-
-    <%= f.input :department %>
-    <%= f.input :street_address %>
-    <%= f.input :email %>
-    <%= f.input :url %>
-    <%= f.input :phone %>
-    <%= f.input :depositor %>
-    <%= f.input :depositor_email %>
+    <%# TODO: move to repository model %>
+    <%= f.input :department, tooltip: I18n.t('records.department') %>
+    <%= f.input :street_address, tooltip: I18n.t('records.street_address') %>
+    <%= f.input :email, tooltip: I18n.t('records.email') %>
+    <%= f.input :url, tooltip: I18n.t('records.url') %>
+    <%= f.input :phone, tooltip: I18n.t('records.phone') %>
+    <%= f.input :depositor, tooltip: I18n.t('records.depositor') %>
+    <%= f.input :depositor_email, tooltip: I18n.t('records.depositor_email') %>
 
  </div>
   <div class="actions">
