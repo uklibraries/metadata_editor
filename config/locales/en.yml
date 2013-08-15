@@ -3,3 +3,48 @@
 
 en:
   hello: "Hello world"
+
+  records:
+    abstract: This is the abstract.
+              The configuration of this tooltip can span multiple lines.
+
+    archival_container_format: This is the archival container format.
+
+    creator: This is the creator.
+
+    date: This is the date.
+
+    department: This is the department.
+
+    depositor: This is the depositor.
+
+    depositor_email: This is the depositor email.
+
+    email: This is the email.
+
+    file_format: This is the file format.
+
+    format: This is the format.
+
+    kytopic: This is the kytopic.
+
+    languages: These are the languages.
+
+    phone: This is the phone.
+
+    repository: This is the repository.
+
+    rights: This is the rights statement.
+            It can stretch over multiple lines.
+
+    source: This is the source.
+
+    street_address: This is the street address.
+
+    subjects: These are the subjects.
+
+    title: This is the title of this story, which is also found several times in the story itself.
+
+    type: This is the type.
+
+    url: This is the URL.
