@@ -8,7 +8,7 @@ class Record < ActiveRecord::Base
   belongs_to :file_format
   belongs_to :kytopic
   belongs_to :repository
-
+  
   after_initialize :add_default_values
 
   def add_default_values
@@ -16,5 +16,8 @@ class Record < ActiveRecord::Base
       self.rights = RecordConfig[:rights]
     end
   end
+
+  validates :abstract, :format_id, :kytopic_id, :language_ids, :rights, :type_id, :title, presence: true
+
 end
 
