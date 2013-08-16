@@ -30,7 +30,7 @@ en:
 
     type: This is the type.
 
-  repository:
+  repositories:
     abstract: This is the abstract.
               The configuration of this tooltip can span multiple lines.
 
