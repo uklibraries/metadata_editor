@@ -25,61 +25,68 @@ en:
 
     type: The functions, genres or aggregation levels for the content of the resource.
     
-    Publisher: 
-    Contributor: The person, agency or organization that contributed significantly or played an important role in creating the intellectual content of the resource other than the creator
-    Collection label: 
-    Archival Container:
-    Description:
-    Relation:
-    Collection level relation:
-    Geographic coverage:
-    Retention:
-    Terminal date:
-    Spatial coverage:
-    Series statement:
+    publisher: Name of the person or organization responsible for making the resource available.
     
+    contributor: The person, agency or organization that contributed significantly or played an important role in creating the intellectual content of the resource other than the creator
+    
+    archival_container: This field allows item level records to indicate a physical location within the contributing institution's holdings.
+    
+    description: An account of the physical or intellectual properties of the present resource.
+    
+    relation: A formal string identifier for another resource such as collection or item to which the present resource is related.
+    
+    geographic_coverage: Kentucky specific place names relevant to the intellectual content of the present resource.
+    
+    retention: Either Temporal or Preservation -- whether the resource is intended to be preserved or whether there is a terminal date at which point it should be deaccessioned.
+    
+    terminal_date: The calendar date after which a digital record is intended to be deaccessioned.
+    
+    spatial_coverage: Geospatial coordinates relevant to the intellectual content of the present resource.
+    
+    series_statement: A label designating the intellectual series of an archival collection as indicated by its finding aid to which the present belongs.
     
 
   collections:
-    Scope and content note:
+    collection_label:
     
-    Biography or History:
+     collection_level_relation:  A formal string identifier for another resource such as collection or item to which the present resource is related.
     
-    Arrangement note:
+    scope_content_note: A prose statement summarizing the range and topical coverage of the described materials, often mentioning the form and arrangement of the materials and naming significant organizations, individuals, events, places, and subjects represented. 
     
-    Extent:
+    biography_or_history: A concise essay or chronology that places the archival materials in context by providing information about their creator(s). 
     
-    Abstract:
+    arrangement_note: Information on how the described materials have been subdivided into smaller units, e.g., record groups into series, identifying the logical or physical groupings within a hierarchical structure.
     
-    Date range start and end:
+    extent: Information about the quantity of the materials being described or an expression of the physical space they occupy. 
     
-    Bulk date:
+    abstract: A very brief summary of the materials being described.
     
-    Custodial history:
+    date_range_start_end: The date of the earliest records creation and the latest records creation. As with other dates, these should take the form of YYYY-MM-DD according to ISO 8601.
     
-    Source of acquisition:
+    bulk_date: The date or dates describing the predominant date range during which records in a collection were created.  This date is entered as free text and can be a date (YYYY-MM-DD), a year (YYYY) or span of years (YYYY-YYYY).
     
-    Physical access:
+    custodial_history: Information about the chain of ownership of the materials being described, before they reached the immediate source of acquisition.
     
-    Technical access:
+    source_acquisition: The immediate source of the materials being described and the circumstances under which they were received. Includes donations, transfers, purchases, and deposits.
     
-    Condition governing reproduction and use:
+    physical_access: Information identifying the place where the described materials are stored, such as the name or number of the building, room, stack, shelf, or other tangible area.
     
-    Accruals:
+    technical_access: A description of important physical conditions or characteristics that affect the storage, preservation, or use of the materials described.
     
-    Note:
+    condition_governing_reproduction_use: Information about conditions that affect the availability of the materials being described.
+    
+    accruals: Information about anticipated additions to the materials being described.
+    
+    note: A short statement explaining the text, indicating the basis for an assertion, or citing the source of a quotation or other information. 
   
   
   repository:
-    abstract: This is the abstract.
-              The configuration of this tooltip can span multiple lines.
+    abstract: A very brief summary of the repository being described.
 
-    archival_container_format: This is the archival container format.
+    email: This is the contact email for the repository.
 
-    email: This is the email.
+    department_name: This is the department name within the repository.
 
-    name: This is the department name.
+    street_address: This is the street address for the repository.
 
-    street_address: This is the street address.
-
-    url: This is the URL.
+    url: This is the URL for the repository's website.
