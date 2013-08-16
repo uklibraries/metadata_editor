@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815190324) do
+ActiveRecord::Schema.define(:version => 20130816164052) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20130815190324) do
 
   create_table "records", :force => true do |t|
     t.date     "date"
-    t.string   "phone"
     t.string   "title"
     t.integer  "archival_container_format_id"
     t.integer  "file_format_id"
@@ -95,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20130815190324) do
     t.string   "street_address"
     t.string   "email"
     t.string   "url"
+    t.string   "phone"
   end
 
   create_table "subjects", :force => true do |t|
