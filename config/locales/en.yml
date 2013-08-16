@@ -9,8 +9,6 @@ en:
 
     date: The date when the the present resource was created, or in the case of digitized objects, when the analog source was created.
 
-    file_format: This is the file format.
-
     format: The file format or physical medium of the present resource.
 
     kytopic: Topic headings related to Kentucky history that describe the intellectual content of the resource.
@@ -26,7 +24,52 @@ en:
     title: An identifying and/or descriptive name given to the resource.
 
     type: The functions, genres or aggregation levels for the content of the resource.
+    
+    Publisher: 
+    Contributor: The person, agency or organization that contributed significantly or played an important role in creating the intellectual content of the resource other than the creator
+    Collection label: 
+    Archival Container:
+    Description:
+    Relation:
+    Collection level relation:
+    Geographic coverage:
+    Retention:
+    Terminal date:
+    Spatial coverage:
+    Series statement:
+    
+    
 
+  collections:
+    Scope and content note:
+    
+    Biography or History:
+    
+    Arrangement note:
+    
+    Extent:
+    
+    Abstract:
+    
+    Date range start and end:
+    
+    Bulk date:
+    
+    Custodial history:
+    
+    Source of acquisition:
+    
+    Physical access:
+    
+    Technical access:
+    
+    Condition governing reproduction and use:
+    
+    Accruals:
+    
+    Note:
+  
+  
   repository:
     abstract: This is the abstract.
               The configuration of this tooltip can span multiple lines.
