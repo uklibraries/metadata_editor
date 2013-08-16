@@ -5,28 +5,27 @@ en:
   hello: "Hello world"
 
   records:
-    creator: This is the creator.
+    creator: The person, agency or organization primarily responsible for creating the intellectual content of the resource.
 
-    date: This is the date.
+    date: The date when the the present resource was created, or in the case of digitized objects, when the analog source was created.
 
     file_format: This is the file format.
 
-    format: This is the format.
+    format: The file format or physical medium of the present resource.
 
-    kytopic: This is the kytopic.
+    kytopic: Topic headings related to Kentucky history that describe the intellectual content of the resource.
 
-    languages: These are the languages.
+    languages: The language(s) of the intellectual content of the present resource.
 
-    rights: This is the rights statement.
-            It can stretch over multiple lines.
+    rights: An identifier that links to a rights management statement or to a service providing information about rights management.
 
-    source: This is the source.
+    source: An unambiguous reference to the resource from which the present resource is derived.
 
-    subjects: These are the subjects.
+    subjects: The subjects, utilizing the Library of Congress Subject Authorities, describing the intellectual content of the resource.
 
-    title: This is the title of this story, which is also found several times in the story itself.
+    title: An identifying and/or descriptive name given to the resource.
 
-    type: This is the type.
+    type: The functions, genres or aggregation levels for the content of the resource.
 
   repository:
     abstract: This is the abstract.
