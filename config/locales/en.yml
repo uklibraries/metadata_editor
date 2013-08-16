@@ -38,6 +38,8 @@ en:
 
     name: This is the department name.
 
+    phone: This is the department phone number.
+
     street_address: This is the street address.
 
     url: This is the URL.
