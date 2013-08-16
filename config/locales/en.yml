@@ -5,6 +5,8 @@ en:
   hello: "Hello world"
 
   records:
+    archival_container_format: This is the archival container format.
+
     creator: This is the creator.
 
     date: This is the date.
@@ -31,8 +33,6 @@ en:
   repository:
     abstract: This is the abstract.
               The configuration of this tooltip can span multiple lines.
-
-    archival_container_format: This is the archival container format.
 
     email: This is the email.
 
