@@ -80,7 +80,7 @@ en:
     note: A short statement explaining the text, indicating the basis for an assertion, or citing the source of a quotation or other information. 
   
   
-  repository:
+  repositories:
     abstract: A very brief summary of the repository being described.
 
     email: This is the contact email for the repository.
