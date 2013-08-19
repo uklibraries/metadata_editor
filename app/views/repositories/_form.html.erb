@@ -2,12 +2,13 @@
   <% [
        :name,
        :email,
+       :phone,
        :url,
        :street_address,
        :abstract,
      ].each do |field|
      %>
-    <%= f.input field, tooltip: I18n.t("repository.#{field}") %>
+    <%= f.input field, tooltip: I18n.t("repositories.#{field}") %>
   <% end %>
 
   <%= f.button :submit %>
