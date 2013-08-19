@@ -85,7 +85,9 @@ en:
 
     email: This is the contact email for the repository.
 
-    department_name: This is the department name within the repository.
+    name: This is the department name within the repository.
+
+    phone: This is the phone number of the repository.
 
     street_address: This is the street address for the repository.
 
