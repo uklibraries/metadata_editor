@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130816164052) do
+ActiveRecord::Schema.define(:version => 20130819123654) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -64,9 +64,8 @@ ActiveRecord::Schema.define(:version => 20130816164052) do
     t.integer  "kytopic_id"
     t.integer  "repository_id"
     t.integer  "type_id"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
-    t.text     "rights",                       :limit => 255
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "creator"
     t.string   "source"
   end
@@ -95,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20130816164052) do
     t.string   "email"
     t.string   "url"
     t.string   "phone"
+    t.text     "rights"
   end
 
   create_table "subjects", :force => true do |t|

@@ -6,6 +6,7 @@
        :url,
        :street_address,
        :abstract,
+       :rights,
      ].each do |field|
      %>
     <%= f.input field, tooltip: I18n.t("repositories.#{field}") %>
