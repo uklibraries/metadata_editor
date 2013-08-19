@@ -15,8 +15,6 @@ en:
 
     languages: The language(s) of the intellectual content of the present resource.
 
-    rights: An identifier that links to a rights management statement or to a service providing information about rights management.
-
     source: An unambiguous reference to the resource from which the present resource is derived.
 
     subjects: The subjects, utilizing the Library of Congress Subject Authorities, describing the intellectual content of the resource.
@@ -88,6 +86,8 @@ en:
     name: This is the department name within the repository.
 
     phone: This is the phone number of the repository.
+
+    rights: An identifier that links to a rights management statement or to a service providing information about rights management.
 
     street_address: This is the street address for the repository.
 

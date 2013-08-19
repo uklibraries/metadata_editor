@@ -1,5 +1,5 @@
 class Record < ActiveRecord::Base
-  attr_accessible :archival_container_format_id, :creator, :date, :file_format_id, :format_id, :kytopic_id,  :language_ids, :repository_id, :rights, :source, :subject_ids, :title, :type_id
+  attr_accessible :archival_container_format_id, :creator, :date, :file_format_id, :format_id, :kytopic_id,  :language_ids, :repository_id, :source, :subject_ids, :title, :type_id
   belongs_to :format
   belongs_to :type
   has_and_belongs_to_many :languages
@@ -9,15 +9,7 @@ class Record < ActiveRecord::Base
   belongs_to :kytopic
   belongs_to :repository
   
-  after_initialize :add_default_values
-
-  def add_default_values
-    if self.new_record?
-      self.rights = RecordConfig[:rights]
-    end
-  end
-
-  validates :format_id, :kytopic_id, :language_ids, :rights, :type_id, :title, presence: true
+  validates :format_id, :kytopic_id, :language_ids, :type_id, :title, presence: true
 
 end
 
