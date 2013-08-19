@@ -89,6 +89,8 @@ en:
 
     phone: This is the phone number of the repository.
 
+    rights: An identifier that links to a rights management statement or to a service providing information about rights management.
+
     street_address: This is the street address for the repository.
 
     url: This is the URL for the repository's website.
