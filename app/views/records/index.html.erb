@@ -4,8 +4,6 @@
   <tr>
     <th>Title</th>
     <th>Format</th>
-    <th>Type</th> 
-    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +11,8 @@
 
 <% @records.each do |record| %>
   <tr>
-    <td><%= record.title unless record.title.nil? %></td>
+    <td><%= truncate(record.title, length: 30) unless record.title.nil? %></td>
     <td><%= render record.format unless record.format.nil? %></td>
-    <td><%= render record.type unless record.type.nil? %></td>
-    <td><%= record.date unless record.date.nil? %></td>
     <td><%= link_to 'Show', record %></td>
     <td><%= link_to 'Edit', edit_record_path(record) %></td>
     <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
