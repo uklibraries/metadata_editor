@@ -3,3 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $('[rel~=tooltip]').tooltip()
+  $('input.date_picker').datepicker
+    dateFormat: 'yy-mm-dd'
+    changeYear: true
+    yearRange: 'c-100:c+10'
