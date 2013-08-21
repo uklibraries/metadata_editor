@@ -1,6 +1,9 @@
 class RemoveSourceFromRecord < ActiveRecord::Migration
-  def change 
+  def up 
     remove_column :records, :source
   end
-
+ 
+  def down
+    remove_column :records, :source, :string
+  end
 end

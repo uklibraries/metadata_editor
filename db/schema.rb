@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(:version => 20130821135733) do
   add_index "languages_records", ["language_id", "record_id"], :name => "index_languages_records_on_language_id_and_record_id"
   add_index "languages_records", ["record_id"], :name => "index_languages_records_on_record_id"
 
+# Could not dump table "records" because of following StandardError
+#   Unknown type 'reference' for column 'source'
+
   create_table "records_subjects", :id => false, :force => true do |t|
     t.integer "record_id"
     t.integer "subject_id"
