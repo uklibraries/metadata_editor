@@ -55,8 +55,28 @@ ActiveRecord::Schema.define(:version => 20130821135733) do
   add_index "languages_records", ["language_id", "record_id"], :name => "index_languages_records_on_language_id_and_record_id"
   add_index "languages_records", ["record_id"], :name => "index_languages_records_on_record_id"
 
-# Could not dump table "records" because of following StandardError
-#   Unknown type 'reference' for column 'source'
+  create_table "records", :force => true do |t|
+    t.date     "date"
+    t.string   "title"
+    t.integer  "archival_container_format_id"
+    t.integer  "file_format_id"
+    t.integer  "format_id"
+    t.integer  "kytopic_id"
+    t.integer  "repository_id"
+    t.integer  "type_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "creator"
+    t.integer  "source_id"
+  end
+
+  add_index "records", ["archival_container_format_id"], :name => "index_records_on_archival_container_format_id"
+  add_index "records", ["file_format_id"], :name => "index_records_on_file_format_id"
+  add_index "records", ["format_id"], :name => "index_records_on_format_id"
+  add_index "records", ["kytopic_id"], :name => "index_records_on_kytopic_id"
+  add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
+  add_index "records", ["source_id"], :name => "index_records_on_source_id"
+  add_index "records", ["type_id"], :name => "index_records_on_type_id"
 
   create_table "records_subjects", :id => false, :force => true do |t|
     t.integer "record_id"
