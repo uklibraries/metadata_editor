@@ -1,0 +1,15 @@
+%h1 Listing records
+
+%table.table.table-striped
+  %tr
+    %th Title
+    %th Format
+    %th
+    %th
+    %th
+  = render partial: "record_controls", 
+           collection: @records, as: :record
+
+%br
+
+= link_to 'New Record', new_record_path

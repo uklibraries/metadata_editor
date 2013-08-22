@@ -1,0 +1,3 @@
+= simple_form_for(@repository) do |f|
+  = render partial: 'inputs/input', collection: [:name, :email, :phone, :url, :street_address, :abstract, :rights], as: :field, locals: {form: f, model: 'repositories'}
+  = f.button :submit

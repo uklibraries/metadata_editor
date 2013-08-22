@@ -1,0 +1,11 @@
+%p
+  - if defined? field_label
+    %b #{field_label}:
+  - else
+    %b #{field.to_s.humanize}:
+  - if model.send(field).is_a? Enumerable
+    %ul
+      = render partial: 'fields/item',
+               collection: model.send(field)
+  - else
+    = render model.send(field) rescue model.try(field)
