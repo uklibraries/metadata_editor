@@ -1,5 +1,6 @@
-= render partial: 'repositories/field',
-         collection: [:name, :email, :phone, :url, :street_address, :abstract, :rights]
+= render partial: 'fields/field',
+         collection: [:name, :email, :phone, :url, :street_address, :abstract, :rights],
+         locals: { model: @repository }
 
 = link_to 'Edit', edit_repository_path(@repository)
 = link_to 'Back', repositories_path
