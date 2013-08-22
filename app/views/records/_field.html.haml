@@ -5,8 +5,7 @@
     %b #{field.to_s.humanize}:
   - if @record.send(field).is_a? Enumerable
     %ul
-      = render partial: 'fields',
-               collection: @record.send(field),
-               as: 'item'
+      = render partial: 'item',
+               collection: @record.send(field)
   - else
     = render @record.send(field) rescue @record.try(field)
