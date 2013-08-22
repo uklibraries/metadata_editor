@@ -7,7 +7,8 @@
     %th
     %th
     %th
-  = render partial: "repository", collection: @repositories
+  = render partial: "repository_controls", 
+           collection: @repositories, as: :repository
 
 %br
 
