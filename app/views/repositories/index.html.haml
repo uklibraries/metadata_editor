@@ -1,0 +1,15 @@
+%h1 Listing repositories
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th URL
+    %th
+    %th
+    %th
+  = render partial: "repository_controls", 
+           collection: @repositories, as: :repository
+
+%br
+
+= link_to 'New Repository', new_repository_path
