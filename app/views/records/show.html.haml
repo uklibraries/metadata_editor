@@ -1,5 +1,5 @@
 = render partial: 'fields/field',
-         collection: [:format, :kentucky_topic, :languages, :resource_type, :title, :creator, :date, :source, :subjects, :repository],
+         collection: [:format, :kentucky_topic, :languages, :resource_type, :title, :creator, :date, :source, :subjects, :repository, :description, :publisher, :series_statement],
          locals: { model: @record }
 
 = link_to 'Edit', edit_record_path(@record) 

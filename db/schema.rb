@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823135616) do
+ActiveRecord::Schema.define(:version => 20130823175009) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(:version => 20130823135616) do
     t.datetime "updated_at",        :null => false
     t.string   "creator"
     t.integer  "source_id"
+    t.string   "description"
+    t.string   "publisher"
+    t.string   "series_statement"
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
