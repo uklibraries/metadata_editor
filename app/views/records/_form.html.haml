@@ -25,4 +25,8 @@
                     as: :field,
                     locals: { form: f, model: 'records' }
 
+  = f.input :description, tooltip: I18n.t('records.description')
+  = f.input :publisher, tooltip: I18n.t('records.publisher')
+  = f.input :series_statement, tooltip: I18n.t('records.series_statement')
+
   = f.button :submit
