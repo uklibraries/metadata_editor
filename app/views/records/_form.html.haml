@@ -21,7 +21,7 @@
     %b Recommended
 
   = render partial: 'inputs/association',
-                    collection: [:subjects, :file_format],
+                    collection: [:subjects],
                     as: :field,
                     locals: { form: f, model: 'records' }
 

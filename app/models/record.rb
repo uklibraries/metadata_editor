@@ -1,10 +1,9 @@
 class Record < ActiveRecord::Base
-  attr_accessible :creator, :date, :file_format_id, :format_id, :kentucky_topic_id,  :language_ids, :repository_id, :source_id, :subject_ids, :title, :resource_type_id
+  attr_accessible :creator, :date, :format_id, :kentucky_topic_id,  :language_ids, :repository_id, :source_id, :subject_ids, :title, :resource_type_id
   belongs_to :format
   belongs_to :resource_type
   has_and_belongs_to_many :languages
   has_and_belongs_to_many :subjects
-  belongs_to :file_format
   belongs_to :kentucky_topic
   belongs_to :repository
   belongs_to :source
