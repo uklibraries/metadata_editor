@@ -3,7 +3,7 @@
     %b Required Fields
 
   = render partial: 'inputs/association',
-                    collection: [:format, :kytopic, :languages, :type],
+                    collection: [:format, :kentucky_topic, :languages, :resource_type],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
@@ -21,7 +21,7 @@
     %b Recommended
 
   = render partial: 'inputs/association',
-                    collection: [:archival_container_format, :subjects, :file_format],
+                    collection: [:subjects],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
