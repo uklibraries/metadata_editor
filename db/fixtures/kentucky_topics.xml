@@ -39,7 +39,7 @@
 		<xs:enumeration value="Sports History"/>
 		<xs:enumeration value="Tobacco"/>
 		<xs:enumeration value="University of Kentucky"/>
-		<xs:enumeration value="Womenís history"/>
+		<xs:enumeration value="Women's history"/>
             </xs:restriction>
         </xs:simpleKyTopics> 
      </xs:union>
