@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821135733) do
+ActiveRecord::Schema.define(:version => 20130823131024) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20130821135733) do
     t.integer  "format_id"
     t.integer  "kytopic_id"
     t.integer  "repository_id"
-    t.integer  "type_id"
+    t.integer  "resource_type_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.string   "creator"
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20130821135733) do
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["kytopic_id"], :name => "index_records_on_kytopic_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
+  add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"
-  add_index "records", ["type_id"], :name => "index_records_on_type_id"
 
   create_table "records_subjects", :id => false, :force => true do |t|
     t.integer "record_id"
@@ -98,6 +98,12 @@ ActiveRecord::Schema.define(:version => 20130821135733) do
     t.text     "rights"
   end
 
+  create_table "resource_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "sources", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -105,12 +111,6 @@ ActiveRecord::Schema.define(:version => 20130821135733) do
   end
 
   create_table "subjects", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

@@ -5,7 +5,7 @@
          locals: { model: @record, field: :kytopic, field_label: "KY Topic" }
 
 = render partial: 'fields/field',
-         collection: [:languages, :type, :title, :creator, :date, :source, :archival_container_format, :subjects, :repository],
+         collection: [:languages, :resource_type, :title, :creator, :date, :source, :archival_container_format, :subjects, :repository],
          locals: { model: @record }
 
 = link_to 'Edit', edit_record_path(@record) 

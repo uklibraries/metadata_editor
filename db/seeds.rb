@@ -19,13 +19,13 @@ class Seed
 end
 
 [
-  :format,
-  :type,
   :archival_container_format,
-  :subject,
   :file_format,
+  :format,
   :kytopic,
   :repository, # TODO give repository its own seed method
+  :resource_type,
+  :subject,
 ].each do |symbol|
   seed = Seed.new :symbol => symbol
   seed.plant
