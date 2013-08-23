@@ -19,7 +19,6 @@ class Seed
 end
 
 [
-  :archival_container_format,
   :file_format,
   :format,
   :kentucky_topic,

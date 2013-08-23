@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823131519) do
-
-  create_table "archival_container_formats", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130823132228) do
 
   create_table "file_formats", :force => true do |t|
     t.string   "name"
@@ -58,19 +52,17 @@ ActiveRecord::Schema.define(:version => 20130823131519) do
   create_table "records", :force => true do |t|
     t.date     "date"
     t.string   "title"
-    t.integer  "archival_container_format_id"
     t.integer  "file_format_id"
     t.integer  "format_id"
     t.integer  "kentucky_topic_id"
     t.integer  "repository_id"
     t.integer  "resource_type_id"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "creator"
     t.integer  "source_id"
   end
 
-  add_index "records", ["archival_container_format_id"], :name => "index_records_on_archival_container_format_id"
   add_index "records", ["file_format_id"], :name => "index_records_on_file_format_id"
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["kentucky_topic_id"], :name => "index_records_on_kytopic_id"
