@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823131024) do
+ActiveRecord::Schema.define(:version => 20130823131519) do
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20130823131024) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "kytopics", :force => true do |t|
+  create_table "kentucky_topics", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20130823131024) do
     t.integer  "archival_container_format_id"
     t.integer  "file_format_id"
     t.integer  "format_id"
-    t.integer  "kytopic_id"
+    t.integer  "kentucky_topic_id"
     t.integer  "repository_id"
     t.integer  "resource_type_id"
     t.datetime "created_at",                   :null => false
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20130823131024) do
   add_index "records", ["archival_container_format_id"], :name => "index_records_on_archival_container_format_id"
   add_index "records", ["file_format_id"], :name => "index_records_on_file_format_id"
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
-  add_index "records", ["kytopic_id"], :name => "index_records_on_kytopic_id"
+  add_index "records", ["kentucky_topic_id"], :name => "index_records_on_kytopic_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"

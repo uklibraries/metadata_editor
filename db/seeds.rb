@@ -22,7 +22,7 @@ end
   :archival_container_format,
   :file_format,
   :format,
-  :kytopic,
+  :kentucky_topic,
   :repository, # TODO give repository its own seed method
   :resource_type,
   :subject,
