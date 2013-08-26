@@ -8,7 +8,7 @@ class Record < ActiveRecord::Base
   belongs_to :repository
   belongs_to :source
  
-  validates :format_id, :kentucky_topic_id, :language_ids, :resource_type_id, :title, presence: true
+  validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
 
 end
 

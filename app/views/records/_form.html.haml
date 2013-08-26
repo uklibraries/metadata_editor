@@ -3,7 +3,7 @@
     %b Required Fields
 
   = render partial: 'inputs/association',
-                    collection: [:format, :kentucky_topic, :languages, :resource_type],
+                    collection: [:format, :languages, :resource_type],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
@@ -14,6 +14,8 @@
 
   = f.input :creator, tooltip: I18n.t('records.creator')
   = f.input :date, tooltip: I18n.t('records.date'), as: :date_picker
+  = f.association :kentucky_topic, tooltip: I18n.t('records.kentucky_topic'),
+                   input_html: { class: 'chosen-select' }
   = f.association :source, tooltip: I18n.t('records.source'),
                    input_html: { class: 'chosen-select' } 
 
