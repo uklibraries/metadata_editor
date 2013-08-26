@@ -14,7 +14,7 @@
 
   = f.input :creator, tooltip: I18n.t('records.creator')
   = f.input :date, tooltip: I18n.t('records.date'), as: :date_picker
-  = f.association :kentucky_topic, tooltip: I18n.t('records.kentucky_topic'),
+  = f.association :kentucky_topics, tooltip: I18n.t('records.kentucky_topics'),
                    input_html: { class: 'chosen-select' }
   = f.association :source, tooltip: I18n.t('records.source'),
                    input_html: { class: 'chosen-select' } 

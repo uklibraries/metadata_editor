@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823175009) do
+ActiveRecord::Schema.define(:version => 20130826202537) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20130823175009) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "kentucky_topics_records", :id => false, :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "kentucky_topic_id"
+    t.integer  "record_id"
+  end
+
+  add_index "kentucky_topics_records", ["kentucky_topic_id", "record_id"], :name => "index_kentucky_topics_records_on_kentucky_topic_id_and_record_id"
+  add_index "kentucky_topics_records", ["record_id"], :name => "index_kentucky_topics_records_on_record_id"
 
   create_table "languages", :force => true do |t|
     t.string   "name"
@@ -47,11 +58,10 @@ ActiveRecord::Schema.define(:version => 20130823175009) do
     t.date     "date"
     t.string   "title"
     t.integer  "format_id"
-    t.integer  "kentucky_topic_id"
     t.integer  "repository_id"
     t.integer  "resource_type_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "creator"
     t.integer  "source_id"
     t.string   "description"
@@ -60,7 +70,6 @@ ActiveRecord::Schema.define(:version => 20130823175009) do
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
-  add_index "records", ["kentucky_topic_id"], :name => "index_records_on_kytopic_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"
