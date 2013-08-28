@@ -1,4 +1,4 @@
 class KentuckyTopic < ActiveRecord::Base
   attr_accessible :name
-  has_many :records 
+  has_and_belongs_to_many :records 
 end
