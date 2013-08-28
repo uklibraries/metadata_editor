@@ -1,9 +1,6 @@
 class CreateKentuckyTopicsRecordsTable < ActiveRecord::Migration
   def change 
     create_table :kentucky_topics_records, :id=> false do |t| 
-     t.string :name 
-
-     t.timestamps 
 
      t.references :kentucky_topic
      t.references :record

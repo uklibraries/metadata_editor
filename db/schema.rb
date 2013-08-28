@@ -26,11 +26,8 @@ ActiveRecord::Schema.define(:version => 20130826202537) do
   end
 
   create_table "kentucky_topics_records", :id => false, :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.integer  "kentucky_topic_id"
-    t.integer  "record_id"
+    t.integer "kentucky_topic_id"
+    t.integer "record_id"
   end
 
   add_index "kentucky_topics_records", ["kentucky_topic_id", "record_id"], :name => "index_kentucky_topics_records_on_kentucky_topic_id_and_record_id"
