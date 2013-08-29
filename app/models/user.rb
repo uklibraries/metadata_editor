@@ -7,5 +7,23 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  attr_accessible :roles
+
+  ROLES = [:admin, :site_manager]
+
+  def roles=(roles)
+    self.roles_mask = (roles.map(&:to_sym) & ROLES).map {|r| 2**ROLES.index(r)}.sum
+  end
+
+  def roles
+    ROLES.reject {|r| ((roles_mask || 0) & 2**ROLES.index(r)).zero?}
+  end
+
+  def role_symbols
+    roles.map(&:to_sym)
+  end
+
+  def is?(roles)
+    roles.include? role
+  end
 end
