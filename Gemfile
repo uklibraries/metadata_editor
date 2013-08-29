@@ -27,6 +27,7 @@ gem 'cancan'
 gem 'chosen-rails'
 gem 'devise'
 gem 'haml'
+gem 'high_voltage'
 gem 'inherited_resources'
 
 gem 'simple_form'
