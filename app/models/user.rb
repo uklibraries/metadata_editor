@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :members
   has_many :repositories, through: :members
+  has_many :records, through: :repositories
 
   ROLES = [:admin, :site_manager]
 

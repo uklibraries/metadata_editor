@@ -12,4 +12,5 @@
 
 %br
 
-= link_to 'New Repository', new_repository_path
+- if can? :create, :repository
+  = link_to 'New Repository', new_repository_path
