@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'chosen-rails'
+gem 'devise'
 gem 'haml'
 gem 'inherited_resources'
 
