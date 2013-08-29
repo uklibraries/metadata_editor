@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :roles
 
+  has_many :members
+  has_many :repositories, through: :members
+
   ROLES = [:admin, :site_manager]
 
   def roles=(roles)

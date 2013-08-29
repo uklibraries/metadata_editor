@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829165041) do
+ActiveRecord::Schema.define(:version => 20130829192348) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(:version => 20130829165041) do
 
   add_index "languages_records", ["language_id", "record_id"], :name => "index_languages_records_on_language_id_and_record_id"
   add_index "languages_records", ["record_id"], :name => "index_languages_records_on_record_id"
+
+  create_table "members", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "repository_id"
+    t.boolean  "manager"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "members", ["repository_id", "user_id"], :name => "index_members_on_repository_id_and_user_id", :unique => true
+  add_index "members", ["user_id"], :name => "index_members_on_user_id"
 
   create_table "records", :force => true do |t|
     t.date     "date"
