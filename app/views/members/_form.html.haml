@@ -1,0 +1,3 @@
+= simple_form_for(@member) do |f|
+  = render partial: 'inputs/association', collection: [:repository], as: :field, locals: {form: f, model: 'members'}
+  = f.button :submit, 'Join'

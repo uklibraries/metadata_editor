@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826202537) do
+ActiveRecord::Schema.define(:version => 20130830173750) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(:version => 20130826202537) do
 
   add_index "languages_records", ["language_id", "record_id"], :name => "index_languages_records_on_language_id_and_record_id"
   add_index "languages_records", ["record_id"], :name => "index_languages_records_on_record_id"
+
+  create_table "members", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "repository_id"
+    t.boolean  "manager",       :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "active",        :default => false
+  end
+
+  add_index "members", ["repository_id", "user_id"], :name => "index_members_on_repository_id_and_user_id", :unique => true
+  add_index "members", ["user_id"], :name => "index_members_on_user_id"
 
   create_table "records", :force => true do |t|
     t.date     "date"
@@ -108,5 +120,28 @@ ActiveRecord::Schema.define(:version => 20130826202537) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.integer  "failed_attempts",        :default => 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "roles_mask"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
 
 end

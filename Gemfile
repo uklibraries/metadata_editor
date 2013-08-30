@@ -23,8 +23,11 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass', '~> 2.3.2.1'
+gem 'cancan'
 gem 'chosen-rails'
+gem 'devise'
 gem 'haml'
+gem 'high_voltage'
 gem 'inherited_resources'
 
 gem 'simple_form'
