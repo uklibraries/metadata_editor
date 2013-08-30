@@ -10,9 +10,11 @@ class Ability
       can :manage, Source
     else
       # Repository Editor
-      can :read, Repository, id: user.repository_ids
-      can :create, Record
-      can :manage, Record, id: user.record_ids
+      unless user.repositories.empty?
+        can :read, Repository, id: user.repository_ids
+        can :create, Record
+        can :manage, Record, id: user.record_ids
+      end
 
       # Repository Manager
       can [:edit, :update, :destroy], Repository,
