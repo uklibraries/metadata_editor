@@ -2,7 +2,10 @@
   %p
     %b Required Fields
 
-  - if current_user.active_repositories.count == 1
+  - if current_user.is? :admin or current_user.is? :site_manager
+    = f.association :repository,
+                    tooltip: I18n.t('records.repository')
+  - elsif current_user.active_repositories.count == 1
     = f.input :repository_id,
               as: :hidden,
               input_html: {value: current_user.active_repositories.first.id}
