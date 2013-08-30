@@ -3,6 +3,12 @@ MetadataEditor::Application.routes.draw do
 
   resources :repositories
   resources :records
+  resources :members do
+    member do
+      put 'toggle_manager'
+      put 'toggle_activity'
+    end
+  end
 
   root :to => 'high_voltage/pages#show', id: 'home'
 end

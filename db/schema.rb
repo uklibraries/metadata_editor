@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830131144) do
+ActiveRecord::Schema.define(:version => 20130830173750) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -54,9 +54,10 @@ ActiveRecord::Schema.define(:version => 20130830131144) do
   create_table "members", :force => true do |t|
     t.integer  "user_id"
     t.integer  "repository_id"
-    t.boolean  "manager"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.boolean  "manager",       :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "active",        :default => false
   end
 
   add_index "members", ["repository_id", "user_id"], :name => "index_members_on_repository_id_and_user_id", :unique => true

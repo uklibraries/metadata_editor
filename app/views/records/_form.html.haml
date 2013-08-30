@@ -2,6 +2,15 @@
   %p
     %b Required Fields
 
+  - if current_user.active_repositories.count == 1
+    = f.input :repository_id,
+              as: :hidden,
+              input_html: {value: current_user.active_repositories.first.id}
+  - else
+    = f.association :repository, 
+                    collection: current_user.active_repositories,
+                    tooltip: I18n.t('records.repository')
+
   = render partial: 'inputs/association',
                     collection: [:format, :languages, :resource_type],
                     as: :field,

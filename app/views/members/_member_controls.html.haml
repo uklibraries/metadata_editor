@@ -1,0 +1,12 @@
+%tr
+  %td= member.user.try(:email)
+  %td= member.repository.try(:name)
+  - if can? :toggle, member
+    %td= link_to member.manager ? member.manager : 'false', toggle_manager_member_path(member), method: :put
+    %td= link_to member.active ? member.active : 'false', toggle_activity_member_path(member), method: :put
+  - else
+    %td= member.manager
+    %td= member.active
+  %td
+    - if can? :destroy, member
+      = link_to 'Delete', member, method: :delete, data: { confirm: 'Are you sure?' }

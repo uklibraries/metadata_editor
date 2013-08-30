@@ -9,6 +9,9 @@
     %li
       - if can? :read, Record
         = link_to 'Records', records_path
+    %li
+      - if can? :read, Member
+        = link_to 'Members', members_path
   - else
     %li= link_to 'Sign up', new_user_registration_path
     %li= link_to 'Login', new_user_session_path

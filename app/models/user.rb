@@ -11,7 +11,15 @@ class User < ActiveRecord::Base
 
   has_many :members
   has_many :repositories, through: :members
-  has_many :records, through: :repositories
+  has_many :active_repositories, through: :members,
+           class_name: "Repository",
+           source: :repository,
+           conditions: ['members.active = ?', true]
+  has_many :manageable_repositories, through: :members,
+           class_name: "Repository",
+           source: :repository,
+           conditions: ['members.manager = ?', true]
+  has_many :records, through: :active_repositories
 
   ROLES = [:admin, :site_manager]
 
@@ -29,5 +37,9 @@ class User < ActiveRecord::Base
 
   def is?(role)
     roles.include? role
+  end
+
+  def to_s
+    email
   end
 end
