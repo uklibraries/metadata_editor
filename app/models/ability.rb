@@ -15,7 +15,9 @@ class Ability
       can :manage, Record, id: user.record_ids
 
       # Repository Manager
-      can [:edit, :update, :destroy], Repository, id: user.repository_ids, members: {user_id: user.id, manager: true}
+      can [:edit, :update, :destroy], Repository,
+          id: user.repository_ids,
+          members: {user_id: user.id, manager: true}
     end
   end
 end
