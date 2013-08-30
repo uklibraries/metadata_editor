@@ -12,4 +12,5 @@
 
 %br
 
-= link_to 'New Record', new_record_path
+- if can? :create, Record
+  = link_to 'New Record', new_record_path

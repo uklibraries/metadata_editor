@@ -2,5 +2,9 @@
   %td= repository.name
   %td= link_to repository.url, repository.url if repository.url
   %td= link_to 'Show', repository
-  %td= link_to 'Edit', edit_repository_path(repository)
-  %td= link_to 'Destroy', repository, method: :delete, data: { confirm: 'Are you sure?' }
+  %td
+    - if can? :edit, repository
+      = link_to 'Edit', edit_repository_path(repository)
+  %td
+    - if can? :destroy, repository
+      = link_to 'Destroy', repository, method: :delete, data: { confirm: 'Are you sure?' }

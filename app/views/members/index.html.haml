@@ -1,0 +1,17 @@
+%h1 Listing members
+
+%table.table.table-striped
+  %tr
+    %th User
+    %th Repository
+    %th Manager
+    %th Active
+    %th
+    %th
+  = render partial: "member_controls", 
+           collection: @members, as: :member
+
+%br
+
+- if can? :create, Member
+  = link_to 'New Member', new_member_path
