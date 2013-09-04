@@ -1,5 +1,5 @@
 = render partial: 'fields/field',
-         collection: [:format, :kentucky_topics, :languages, :resource_type, :title, :creator, :date, :source, :subjects, :repository, :description, :publisher, :series_statement],
+         collection: [:format, :kentucky_topics, :languages, :resource_type, :title, :creator, :date, :source, :subjects, :repository, :description, :publisher, :series_statement, :wgs84],
          locals: { model: @record }
 
 - if can? :edit, @record
