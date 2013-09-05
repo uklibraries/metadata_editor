@@ -30,7 +30,9 @@ en:
     contributor: The person, agency or organization that contributed significantly or played an important role in creating the intellectual content of the resource other than the creator
     
     archival_container: This field allows item level records to indicate a physical location within the contributing institution's holdings.
-    
+   
+    wgs84s: The World Geodetic System (WGS) is a standard for use in cartography, geodesy, and navigation. 
+ 
     description: An account of the physical or intellectual properties of the present resource.
     
     relation: A formal string identifier for another resource such as collection or item to which the present resource is related.
