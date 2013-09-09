@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery.ui.datepicker
 //= require jquery_ujs
+//= require underscore
+//= require dependent-fields
 //= require chosen-jquery
 //= require bootstrap
 //= require_tree .
