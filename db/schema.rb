@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830173750) do
+ActiveRecord::Schema.define(:version => 20130909194611) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -76,11 +76,14 @@ ActiveRecord::Schema.define(:version => 20130830173750) do
     t.string   "description"
     t.string   "publisher"
     t.string   "series_statement"
+    t.integer  "retention_id"
+    t.date     "retention_date"
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
+  add_index "records", ["retention_id"], :name => "index_records_on_retention_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"
 
   create_table "records_subjects", :id => false, :force => true do |t|
@@ -104,6 +107,12 @@ ActiveRecord::Schema.define(:version => 20130830173750) do
   end
 
   create_table "resource_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "retentions", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
