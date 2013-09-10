@@ -7,7 +7,7 @@ class Record < ActiveRecord::Base
   has_and_belongs_to_many :kentucky_topics 
   belongs_to :repository
   belongs_to :source
-  has_and_belongs_to_many :wgs84s
+  has_and_belongs_to_many :spatial_coverages
  
   validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
 

@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904192125) do
-
-  create_table "create_wgs84s", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130910174433) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -74,19 +69,21 @@ ActiveRecord::Schema.define(:version => 20130904192125) do
     t.integer  "format_id"
     t.integer  "repository_id"
     t.integer  "resource_type_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "creator"
     t.integer  "source_id"
     t.string   "description"
     t.string   "publisher"
     t.string   "series_statement"
+    t.integer  "spacial_coverage_id"
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"
+  add_index "records", ["spacial_coverage_id"], :name => "index_records_on_spacial_coverage_id"
 
   create_table "records_subjects", :id => false, :force => true do |t|
     t.integer "record_id"
@@ -120,6 +117,12 @@ ActiveRecord::Schema.define(:version => 20130904192125) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "spatial_coverages", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "subjects", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -148,11 +151,5 @@ ActiveRecord::Schema.define(:version => 20130904192125) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
-
-  create_table "wgs84s", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
 end

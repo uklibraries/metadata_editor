@@ -31,7 +31,7 @@ en:
     
     archival_container: This field allows item level records to indicate a physical location within the contributing institution's holdings.
    
-    wgs84s: The World Geodetic System (WGS) is a standard for use in cartography, geodesy, and navigation. 
+    spatial_coverages: The World Geodetic System (WGS) is a standard for use in cartography, geodesy, and navigation. 
  
     description: An account of the physical or intellectual properties of the present resource.
     
