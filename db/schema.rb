@@ -76,12 +76,15 @@ ActiveRecord::Schema.define(:version => 20130911145312) do
     t.string   "description"
     t.string   "publisher"
     t.string   "series_statement"
+    t.integer  "retention_id"
+    t.date     "retention_date"
     t.integer  "spatial_coverage_id"
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
+  add_index "records", ["retention_id"], :name => "index_records_on_retention_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"
   add_index "records", ["spatial_coverage_id"], :name => "index_records_on_spatial_coverage_id"
 
@@ -114,6 +117,12 @@ ActiveRecord::Schema.define(:version => 20130911145312) do
   end
 
   create_table "resource_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "retentions", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

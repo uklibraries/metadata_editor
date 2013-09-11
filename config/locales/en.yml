@@ -42,6 +42,7 @@ en:
     retention: Either Temporal or Preservation -- whether the resource is intended to be preserved or whether there is a terminal date at which point it should be deaccessioned.
     
     terminal_date: The calendar date after which a digital record is intended to be deaccessioned.
+    retention_date: The calendar date after which a digital record is intended to be deaccessioned.
     
     spatial_coverage: Geospatial coordinates relevant to the intellectual content of the present resource.
     

@@ -46,3 +46,11 @@ IO.readlines(file).each do |line|
   ).first_or_create
 end
 
+[
+  'preservation',
+  'temporal',
+].each do |name|
+  Retention.where(
+    name: name
+  ).first_or_create
+end

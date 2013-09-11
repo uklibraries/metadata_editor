@@ -43,4 +43,9 @@
   = f.input :publisher, tooltip: I18n.t('records.publisher')
   = f.input :series_statement, tooltip: I18n.t('records.series_statement')
 
+  = f.association :retention, tooltip: I18n.t('records.retention')
+
+  .js-dependent-fields{:data => {:select_id => 'record_retention_id', :option_value => Retention.temporal.id}}
+    = f.input :retention_date, tooltip: I18n.t('records.retention_date'), as: :date_picker, label: 'Temporal date'
+
   = f.button :submit
