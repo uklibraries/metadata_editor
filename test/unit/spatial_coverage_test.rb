@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Wgs84Test < ActiveSupport::TestCase
+class SpatialCoverageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

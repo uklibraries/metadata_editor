@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910174433) do
+ActiveRecord::Schema.define(:version => 20130911145312) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -76,14 +76,22 @@ ActiveRecord::Schema.define(:version => 20130910174433) do
     t.string   "description"
     t.string   "publisher"
     t.string   "series_statement"
-    t.integer  "spacial_coverage_id"
+    t.integer  "spatial_coverage_id"
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"
   add_index "records", ["source_id"], :name => "index_records_on_source_id"
-  add_index "records", ["spacial_coverage_id"], :name => "index_records_on_spacial_coverage_id"
+  add_index "records", ["spatial_coverage_id"], :name => "index_records_on_spatial_coverage_id"
+
+  create_table "records_spatial_coverages", :id => false, :force => true do |t|
+    t.integer "record_id"
+    t.integer "spatial_coverage_id"
+  end
+
+  add_index "records_spatial_coverages", ["record_id", "spatial_coverage_id"], :name => "rsc_index"
+  add_index "records_spatial_coverages", ["spatial_coverage_id"], :name => "index_records_spatial_coverages_on_spatial_coverage_id"
 
   create_table "records_subjects", :id => false, :force => true do |t|
     t.integer "record_id"
