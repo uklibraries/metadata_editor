@@ -53,4 +53,12 @@ end
   Retention.where(
     name: name
   ).first_or_create
-end
+end 
+
+
+[ '38.031912, -84.495327',
+  '38.031912, -84.495327',
+  '39.103215, -84.511828',
+].each do |spatial_covearge|
+  SpatialCoverage.find_or_create_by_name(spatial_coverage)
+end 

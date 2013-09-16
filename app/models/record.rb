@@ -12,5 +12,12 @@ class Record < ActiveRecord::Base
  
   validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
 
+  def spatial_coverage_name
+    self.spatial_coverage.try(:name)
+  end
+
+  def spatial_coverage_name=(name)
+    self.spatial_coverage = Spatial_Coverage.find_or_create_by_name(name)
+  end
 end
 
