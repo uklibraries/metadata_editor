@@ -9,6 +9,7 @@ MetadataEditor::Application.routes.draw do
       put 'toggle_activity'
     end
   end
+  resources :spatial_coverages
 
   root :to => 'high_voltage/pages#show', id: 'home'
 end
