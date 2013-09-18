@@ -18,10 +18,10 @@ jQuery ->
     e.stopPropagation()
     spatial_coverage_name = $(this).find('span').text()
     $.post(
-      '/spatial_coverage.json'
+      '/spatial_coverages.json'
       {spatial_coverage: {name: spatial_coverage_name}}
       (data) ->
-        $('#spatial_coverage_id').append(
+        $('#record_spatial_coverage_ids').append(
           '<option value="' + data.id + '">' + data.name + '</option>'
         ).val('"' + data.id + '"').trigger('chosen:updated')
       'json'

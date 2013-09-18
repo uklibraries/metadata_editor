@@ -1,0 +1,23 @@
+<h1>Listing Spatial_Coverages</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spatial_coverages.each do |spatial_coverage| %>
+         <tr>
+            <td><%= spatial_coverage.name %></td>
+            <td><%= link_to 'Show', color %></td>
+            <td><%= link_to 'Edit', edit_spatial_coverager_path(spatial_coverage)) %></td>
+        <td><%= link_to 'Destroy', spatial_coverage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+    <% end %>
+    </table>
+    
+   <br />
+   
+  <%= link_to 'New Spatial_Coverage', new_spatial_coverage_path %>
+

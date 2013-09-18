@@ -16,8 +16,8 @@ class Record < ActiveRecord::Base
     self.spatial_coverages.map { |spatial_coverage| spatial_coverage.try(:name) } 
   end
 
-  def spatial_coverage_name=(name)
-    self.spatial_coverage = SpatialCoverage.find_or_create_by_name(name)
+  def spatial_coverage_names=(name)
+    self.spatial_coverages = SpatialCoverage.find_or_create_by_name(name)
   end
 end
 
