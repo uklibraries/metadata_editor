@@ -24,7 +24,6 @@ jQuery ->
           '<option value="' + data.id + '">' + data.name + '</option>'
         ).find('option[value="' + data.id + '"]').prop('selected', true)
         $('#record_spatial_coverage_ids').trigger('chosen:updated')
-#        ).val('"' + data.id + '"').trigger('chosen:updated')
       'json'
     )
     false
