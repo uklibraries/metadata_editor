@@ -16,9 +16,10 @@ jQuery ->
   $('form').on 'click', '.no-results', (e) ->
     e.stopPropagation()
     spatial_coverage_name = $(this).find('span').text()
+    repository_id = $('#record_repository_id').val()
     $.post(
       '/spatial_coverages.json'
-      {spatial_coverage: {name: spatial_coverage_name}}
+      {spatial_coverage: {name: spatial_coverage_name, repository_id: repository_id}}
       (data) ->
         $('#record_spatial_coverage_ids').append(
           '<option value="' + data.id + '">' + data.name + '</option>'
