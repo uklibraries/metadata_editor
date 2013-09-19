@@ -9,7 +9,6 @@ jQuery ->
     yearRange: 'c-100:c+10'
   DependentFields.bind()
 
-
   $('.chosen-select').chosen
     width: '200px'
     no_results_text: "Add Spatial Coverage"
@@ -23,8 +22,9 @@ jQuery ->
       (data) ->
         $('#record_spatial_coverage_ids').append(
           '<option value="' + data.id + '">' + data.name + '</option>'
-        ).val('"' + data.id + '"').trigger('chosen:updated')
+        ).find('option[value="' + data.id + '"]').prop('selected', true)
+        $('#record_spatial_coverage_ids').trigger('chosen:updated')
+#        ).val('"' + data.id + '"').trigger('chosen:updated')
       'json'
     )
     false
-
