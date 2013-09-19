@@ -8,3 +8,22 @@ jQuery ->
     changeYear: true
     yearRange: 'c-100:c+10'
   DependentFields.bind()
+
+  $('.chosen-select').chosen
+    width: '200px'
+    no_results_text: "Add Spatial Coverage"
+
+  $('form').on 'click', '.no-results', (e) ->
+    e.stopPropagation()
+    spatial_coverage_name = $(this).find('span').text()
+    $.post(
+      '/spatial_coverages.json'
+      {spatial_coverage: {name: spatial_coverage_name}}
+      (data) ->
+        $('#record_spatial_coverage_ids').append(
+          '<option value="' + data.id + '">' + data.name + '</option>'
+        ).find('option[value="' + data.id + '"]').prop('selected', true)
+        $('#record_spatial_coverage_ids').trigger('chosen:updated')
+      'json'
+    )
+    false

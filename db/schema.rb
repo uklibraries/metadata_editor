@@ -76,9 +76,9 @@ ActiveRecord::Schema.define(:version => 20130911145312) do
     t.string   "description"
     t.string   "publisher"
     t.string   "series_statement"
+    t.integer  "spatial_coverage_id"
     t.integer  "retention_id"
     t.date     "retention_date"
-    t.integer  "spatial_coverage_id"
   end
 
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
