@@ -28,3 +28,23 @@ jQuery ->
       'json'
     )
     false
+
+   $('.chosen-select').chosen                                                                                                
+       width: '200px'
+       no_results_text: "Add Creator"
+
+   $('form').on 'click', '.no-results', (e) ->
+    e.stopPropagation()
+    creator_name = $(this).find('span').text()
+    repository_id = $('#record_repository_id').val()
+    $.post(
+        '/creator.json'
+      {spatial_coverage: {name: creator_name, repository_id: repository_id}}
+      (data) ->
+        $('#creator_ids').append(
+          '<option value="' + data.id + '">' + data.name + '</option>'
+        ).find('option[value="' + data.id + '"]').prop('selected', true)
+        $('#record_creator_ids').trigger('chosen:updated')
+      'json'
+    )
+    false

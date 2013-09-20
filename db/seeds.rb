@@ -60,4 +60,12 @@ end
   '39.103215, -84.511828',
 ].each do |spatial_coverage|
   SpatialCoverage.find_or_create_by_name(spatial_coverage)
-end 
+end
+
+
+[ 'Kentucky State University',
+  'University of Louisville',
+].each do |creator|
+  Creator.find_or_create_by_name(creator)
+end
+

@@ -1,6 +1,7 @@
 MetadataEditor::Application.routes.draw do
   devise_for :users
 
+  resources :creators
   resources :repositories
   resources :records
   resources :members do
