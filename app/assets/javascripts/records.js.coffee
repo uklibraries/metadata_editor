@@ -13,7 +13,7 @@ jQuery ->
     width: '200px'
     no_results_text: "Add Spatial Coverage"
 
-  $('#record_creators_ids .chosen-select').chosen                                                                     
+  $('#record_creators_ids_chosen .chosen-select').chosen                                                                     
     width: '200px'
     no_results_text: "Add Creator"
 
