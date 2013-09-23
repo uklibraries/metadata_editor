@@ -9,11 +9,15 @@ jQuery ->
     yearRange: 'c-100:c+10'
   DependentFields.bind()
 
-  $('.chosen-select').chosen
+  $('#record_spatial_coverage_ids_chosen .chosen-select').chosen
     width: '200px'
     no_results_text: "Add Spatial Coverage"
 
-  $('form').on 'click', '.no-results', (e) ->
+  $('#record_creator_ids_chosen .chosen-select').chosen                                                                     
+    width: '200px'
+    no_results_text: "Add Creator"
+
+  $('form').on 'click', '#record_spatial_coverage_ids_chosen .no-results', (e) ->
     e.stopPropagation()
     spatial_coverage_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
@@ -29,11 +33,7 @@ jQuery ->
     )
     false
 
-   $('.chosen-select').chosen                                                                                                
-       width: '200px'
-       no_results_text: "Add Creator"
-
-   $('form').on 'click', '.no-results', (e) ->
+   $('form').on 'click', '#record_creator_ids_chosen .no-results', (e) ->
     e.stopPropagation()
     creator_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
