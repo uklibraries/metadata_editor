@@ -63,9 +63,4 @@ end
 end
 
 
-[ 'Kentucky State University',
-  'University of Louisville',
-].each do |creator|
-  Creator.find_or_create_by_name(creator)
-end
 
