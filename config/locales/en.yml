@@ -7,7 +7,7 @@ en:
   records:
     repository: The repository for the resource.
 
-    creator: The person, agency or organization primarily responsible for creating the intellectual content of the resource.
+    creators: The person, agency or organization primarily responsible for creating the intellectual content of the resource.
 
     date: The date when the the present resource was created, or in the case of digitized objects, when the analog source was created.
 

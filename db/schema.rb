@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130919183855) do
+ActiveRecord::Schema.define(:version => 20130923150504) do
+
+  create_table "creators", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "repository_id"
+  end
+
+  create_table "creators_records", :id => false, :force => true do |t|
+    t.integer "record_id"
+    t.integer "creator_id"
+  end
+
+  add_index "creators_records", ["creator_id"], :name => "index_creators_records_on_creator_id"
+  add_index "creators_records", ["record_id", "creator_id"], :name => "index_creators_records_on_record_id_and_creator_id"
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -71,7 +86,6 @@ ActiveRecord::Schema.define(:version => 20130919183855) do
     t.integer  "resource_type_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
-    t.string   "creator"
     t.integer  "source_id"
     t.string   "description"
     t.string   "publisher"
@@ -79,8 +93,10 @@ ActiveRecord::Schema.define(:version => 20130919183855) do
     t.integer  "retention_id"
     t.date     "retention_date"
     t.integer  "spatial_coverage_id"
+    t.integer  "creator_id"
   end
 
+  add_index "records", ["creator_id"], :name => "index_records_on_creator_id"
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
   add_index "records", ["repository_id"], :name => "index_records_on_repository_id"
   add_index "records", ["resource_type_id"], :name => "index_records_on_type_id"

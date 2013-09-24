@@ -24,7 +24,6 @@
   %p
     %b Required If Available
 
-  = f.input :creator, tooltip: I18n.t('records.creator')
   = f.input :date, tooltip: I18n.t('records.date'), as: :date_picker
   = f.association :kentucky_topics, tooltip: I18n.t('records.kentucky_topics'),
                    input_html: { class: 'chosen-select' }
@@ -35,7 +34,7 @@
     %b Recommended
 
   = render partial: 'inputs/association',
-                    collection: [:subjects, :spatial_coverages],
+                    collection: [:subjects, :spatial_coverages, :creators],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
