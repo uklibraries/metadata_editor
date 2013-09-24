@@ -1,4 +1,4 @@
-class CreatorController < ApplicationController
+class CreatorsController < ApplicationController
   # GET /creators
   # GET /creators.json
   def index
@@ -40,12 +40,12 @@ class CreatorController < ApplicationController
   # POST /creators
   # POST /creators.json
   def create
-    @creator = Creator.new(params[:creator]])
+    @creator = Creator.new(params[:creator])
 
     respond_to do |format|
       if @creator.save
         format.html { redirect_to @creator, notice: 'Creator was successfully created.' }
-        format.json { render json: @creator,, status: :created, location: @creator }
+        format.json { render json: @creator, status: :created, location: @creator }
       else
         format.html { render action: "new" }
         format.json { render json: @creator.errors, status: :unprocessable_entity }

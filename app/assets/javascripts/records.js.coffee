@@ -9,11 +9,11 @@ jQuery ->
     yearRange: 'c-100:c+10'
   DependentFields.bind()
 
-  $('input[name="record[spatial_coverage_ids][]"].chosen-select').chosen
+  $('input[name="record[spatial_coverage_ids][]"]').siblings('.chosen-select').chosen
     width: '200px'
     no_results_text: "Add Spatial Coverage"
 
-  $('#record_creators_ids_chosen .chosen-select').chosen                                                                     
+  $('input[name="record[creator_ids][]"]').siblings('.chosen-select').chosen
     width: '200px'
     no_results_text: "Add Creator"
 
@@ -38,10 +38,10 @@ jQuery ->
     creator_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-        '/creator.json'
-      {spatial_coverage: {name: creator_name, repository_id: repository_id}}
+        '/creators.json'
+      {creator: {name: creator_name, repository_id: repository_id}}
       (data) ->
-        $('#creator_ids').append(
+        $('#record_creator_ids').append(
           '<option value="' + data.id + '">' + data.name + '</option>'
         ).find('option[value="' + data.id + '"]').prop('selected', true)
         $('#record_creator_ids').trigger('chosen:updated')
