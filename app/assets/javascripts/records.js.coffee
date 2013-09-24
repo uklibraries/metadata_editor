@@ -9,7 +9,7 @@ jQuery ->
     yearRange: 'c-100:c+10'
   DependentFields.bind()
 
-  $('#record_spatial_coverages_ids .chosen-select').chosen
+  $('input[name="record[spatial_coverage_ids][]"].chosen-select').chosen
     width: '200px'
     no_results_text: "Add Spatial Coverage"
 
