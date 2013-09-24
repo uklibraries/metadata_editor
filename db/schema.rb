@@ -90,9 +90,9 @@ ActiveRecord::Schema.define(:version => 20130923150504) do
     t.string   "description"
     t.string   "publisher"
     t.string   "series_statement"
-    t.integer  "spatial_coverage_id"
     t.integer  "retention_id"
     t.date     "retention_date"
+    t.integer  "spatial_coverage_id"
     t.integer  "creator_id"
   end
 

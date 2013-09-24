@@ -1,6 +1,8 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+<% url = MetadataEditor::Application.routes.url_helpers %>
+
 jQuery ->
   $('[rel~=tooltip]').tooltip()
   $('input.date_picker').datepicker
@@ -22,7 +24,7 @@ jQuery ->
     spatial_coverage_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-      '/spatial_coverages.json'
+      '<%= url.spatial_coverages_path(format: :json) %>'
       {spatial_coverage: {name: spatial_coverage_name, repository_id: repository_id}}
       (data) ->
         $('#record_spatial_coverage_ids').append(
@@ -38,7 +40,7 @@ jQuery ->
     creator_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-        '/creators.json'
+      '<%= url.creators_path(format: :json) %>'
       {creator: {name: creator_name, repository_id: repository_id}}
       (data) ->
         $('#record_creator_ids').append(
