@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 <% url = MetadataEditor::Application.routes.url_helpers %>
+<% prefix = ENV['RAILS_RELATIVE_URL_ROOT'] ? ENV['RAILS_RELATIVE_URL_ROOT'] : '/' %>
 
 jQuery ->
   $('[rel~=tooltip]').tooltip()
@@ -24,7 +25,7 @@ jQuery ->
     spatial_coverage_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-      '<%= URI.join Rails.root.to_s, url.spatial_coverages_path(format: :json) %>'
+      '<%= URI.join prefix, url.spatial_coverages_path(format: :json) %>'
       {spatial_coverage: {name: spatial_coverage_name, repository_id: repository_id}}
       (data) ->
         $('#record_spatial_coverage_ids').append(
@@ -40,7 +41,7 @@ jQuery ->
     creator_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-      '<%= URI.join Rails.root.to_s, url.creators_path(format: :json) %>'
+      '<%= URI.join prefix, url.creators_path(format: :json) %>'
       {creator: {name: creator_name, repository_id: repository_id}}
       (data) ->
         $('#record_creator_ids').append(
