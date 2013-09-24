@@ -24,7 +24,7 @@ jQuery ->
     spatial_coverage_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-      '<%= url.spatial_coverages_path(format: :json) %>'
+      '<%= URI.join Rails.root.to_s, url.spatial_coverages_path(format: :json) %>'
       {spatial_coverage: {name: spatial_coverage_name, repository_id: repository_id}}
       (data) ->
         $('#record_spatial_coverage_ids').append(
@@ -40,7 +40,7 @@ jQuery ->
     creator_name = $(this).find('span').text()
     repository_id = $('#record_repository_id').val()
     $.post(
-      '<%= url.creators_path(format: :json) %>'
+      '<%= URI.join Rails.root.to_s, url.creators_path(format: :json) %>'
       {creator: {name: creator_name, repository_id: repository_id}}
       (data) ->
         $('#record_creator_ids').append(
