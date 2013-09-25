@@ -69,3 +69,8 @@ end
   Creator.find_or_create_by_name(creator)
 end
 
+[ 'University of Kentucky',
+  'University of Louisville',
+].each do |source|
+  Source.find_or_create_by_name(source)
+end

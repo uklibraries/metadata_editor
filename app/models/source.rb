@@ -1,4 +1,9 @@
 class Source < ActiveRecord::Base
-   attr_accessible :name
-   has_many :records
+  attr_accessible :name, :repository_id
+  has_and_belongs_to_many :records
+  belongs_to :repository
+  validates :name, uniqueness: { scope: :repository_id,
+    message: "should be unique for a repository"
+  }
 end
+

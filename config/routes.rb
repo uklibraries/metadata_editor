@@ -4,6 +4,7 @@ MetadataEditor::Application.routes.draw do
   resources :creators
   resources :repositories
   resources :records
+  resources :sources
   resources :members do
     member do
       put 'toggle_manager'
