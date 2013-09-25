@@ -27,9 +27,11 @@
   = f.input :date, tooltip: I18n.t('records.date'), as: :date_picker
   = f.association :kentucky_topics, tooltip: I18n.t('records.kentucky_topics'),
                    input_html: { class: 'chosen-select' }
-  = f.association :sources, tooltip: I18n.t('records.sources'),
-                   input_html: { class: 'chosen-select' } 
 
+  = render partial: 'inputs/association',
+                    collection: [:sources],
+                    as: :field,
+                    locals: { form: f, model: 'records' }
   %p
     %b Recommended
 
