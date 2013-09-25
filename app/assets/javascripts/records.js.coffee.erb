@@ -20,6 +20,10 @@ jQuery ->
     width: '200px'
     no_results_text: "Add Creator"
 
+  $('input[name="record[source_ids][]"]').siblings('.chosen-select').chosen
+    width: '200px'
+    no_results_text: "Add Source"
+
   $('form').on 'click', '#record_spatial_coverage_ids_chosen .no-results', (e) ->
     e.stopPropagation()
     spatial_coverage_name = $(this).find('span').text()
@@ -48,6 +52,22 @@ jQuery ->
           '<option value="' + data.id + '">' + data.name + '</option>'
         ).find('option[value="' + data.id + '"]').prop('selected', true)
         $('#record_creator_ids').trigger('chosen:updated')
+      'json'
+    )
+    false
+
+   $('form').on 'click', '#record_source_ids_chosen .no-results', (e) ->
+    e.stopPropagation()
+    source_name = $(this).find('span').text()
+    repository_id = $('#record_repository_id').val()
+    $.post(
+      '<%= "#{prefix}#{url.sources_path(format: :json)}" %>'
+      {source: {name: source_name, repository_id: repository_id}}
+      (data) ->
+        $('#record_source_ids').append(
+          '<option value="' + data.id + '">' + data.name + '</option>'
+        ).find('option[value="' + data.id + '"]').prop('selected', true)
+        $('#record_source_ids').trigger('chosen:updated')
       'json'
     )
     false

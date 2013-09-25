@@ -2,6 +2,7 @@ class Repository < ActiveRecord::Base
   attr_accessible :abstract, :email, :name, :phone, :rights, :street_address, :url
   has_many :creators
   has_many :records
+  has_many :sources
   has_many :members
   has_many :spatial_coverages
   has_many :users, through: :members
