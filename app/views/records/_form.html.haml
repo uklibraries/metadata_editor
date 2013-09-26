@@ -36,7 +36,7 @@
     %b Recommended
 
   = render partial: 'inputs/association',
-                    collection: [:subjects, :spatial_coverages, :creators],
+                    collection: [:subjects, :spatial_coverages, :creators, :archival_container_format],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
