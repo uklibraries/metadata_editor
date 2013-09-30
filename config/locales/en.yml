@@ -97,3 +97,9 @@ en:
     street_address: This is the street address for the repository.
 
     url: This is the URL for the repository's website.
+
+    container_number_1: The is the identifier for the container type.  
+
+    container_number_2: The is the identifier for the container type. 
+
+    container_number_3: The is the identifier for the container type. 

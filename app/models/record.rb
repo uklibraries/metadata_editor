@@ -1,5 +1,5 @@
 class Record < ActiveRecord::Base
-  attr_accessible :archival_container_format_id, :creator_ids, :date, :description, :format_id, :kentucky_topic_ids,  :language_ids, :publisher, :repository_id, :resource_type_id, :retention_date, :retention_id, :series_statement, :source_ids, :spatial_coverage_ids, :subject_ids, :title
+  attr_accessible :archival_container_format_id, :container_number_1, :container_number_2, :container_number_3, :creator_ids, :date, :description, :format_id, :kentucky_topic_ids,  :language_ids, :publisher, :repository_id, :resource_type_id, :retention_date, :retention_id, :series_statement, :source_ids, :spatial_coverage_ids, :subject_ids, :title
   belongs_to :format
   belongs_to :resource_type
   has_and_belongs_to_many :languages
