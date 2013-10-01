@@ -35,14 +35,31 @@
   %p
     %b Recommended
 
+
   = render partial: 'inputs/association',
-                    collection: [:subjects, :spatial_coverages, :creators, :archival_container_format],
+                    collection: [:archival_container_format  ],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
+
   = f.input :container_number_1, tooltip: I18n.t('records.container_number_1')
+
+  = render partial: 'inputs/association',
+                    collection: [:archival_container2_format  ],
+                    as: :field,
+                    locals: { form: f, model: 'records' }
+
   = f.input :container_number_2, tooltip: I18n.t('records.container_number_2')
+
+
+  = render partial: 'inputs/association',
+                    collection: [:archival_container3_format  ],
+                    as: :field,
+                    locals: { form: f, model: 'records' }
+
   = f.input :container_number_3, tooltip: I18n.t('records.container_number_3')
+
+
   = f.input :description, tooltip: I18n.t('records.description')
   = f.input :publisher, tooltip: I18n.t('records.publisher')
   = f.input :series_statement, tooltip: I18n.t('records.series_statement')

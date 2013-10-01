@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930151325) do
+ActiveRecord::Schema.define(:version => 20131001204518) do
+
+  create_table "archival_container2_formats", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "archival_container3_formats", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "archival_container_formats", :force => true do |t|
     t.string   "name"
@@ -90,8 +102,8 @@ ActiveRecord::Schema.define(:version => 20130930151325) do
     t.integer  "format_id"
     t.integer  "repository_id"
     t.integer  "resource_type_id"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "source_id"
     t.string   "description"
     t.string   "publisher"
@@ -104,8 +116,12 @@ ActiveRecord::Schema.define(:version => 20130930151325) do
     t.string   "container_number_1"
     t.string   "container_number_2"
     t.string   "container_number_3"
+    t.integer  "archival_container2_format_id"
+    t.integer  "archival_container3_format_id"
   end
 
+  add_index "records", ["archival_container2_format_id"], :name => "index_records_on_archival_container2_format_id"
+  add_index "records", ["archival_container3_format_id"], :name => "index_records_on_archival_container3_format_id"
   add_index "records", ["archival_container_format_id"], :name => "index_records_on_archival_container_format_id"
   add_index "records", ["creator_id"], :name => "index_records_on_creator_id"
   add_index "records", ["format_id"], :name => "index_records_on_format_id"
