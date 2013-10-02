@@ -11,8 +11,6 @@ class Record < ActiveRecord::Base
   has_and_belongs_to_many :spatial_coverages
   has_and_belongs_to_many :creators
   belongs_to :archival_container_format
-  belongs_to :archival_container2_format
-  belongs_to :archival_container3_format
  
   validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
 
