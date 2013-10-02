@@ -1,5 +1,5 @@
 = render partial: 'fields/field',
-         collection: [:format, :kentucky_topics, :languages, :resource_type, :title, :creators, :date, :sources, :subjects, :repository, :description, :publisher, :series_statement, :spatial_coverages, :archival_container_format, :container_number_1 ],
+         collection: [:format, :kentucky_topics, :languages, :resource_type, :title, :creators, :date, :sources, :subjects, :repository, :description, :publisher, :series_statement, :spatial_coverages  ],
          locals: { model: @record }
 
 = render partial: 'fields/field',
@@ -9,6 +9,23 @@
   = render partial: 'fields/field', 
            locals: { model: @record, field_label: 'Temporal date', field: :retention_date }
     
+
+  %ul
+  %l: 
+  <b> Container List 1: </b> 
+  = @record.archival_container_format_id 
+  = @record.container_number_1
+  <br>
+  <br>
+  <b> Container List 2: </b>
+  = @record.container_number_2
+  <br>
+  <br>
+  <b> Container List 3: </b>
+  = @record.container_number_3 
+  <br>
+  <br>
+
 - if can? :edit, @record
   = link_to 'Edit', edit_record_path(@record) 
 = link_to 'Back', records_path

@@ -14,5 +14,9 @@ class Record < ActiveRecord::Base
  
   validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
 
+  def archival_contained_format
+      ArchivalContainerFormat.find(self.archival_container_format_id)
+  end
+
 end
 
