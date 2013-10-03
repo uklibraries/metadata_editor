@@ -44,6 +44,10 @@
 
   = f.input :container_number_1, tooltip: I18n.t('records.container_number_1')
 
+  = render partial: 'inputs/association',
+                    collection: [:archival_container2_format  ],
+                    as: :field,
+                    locals: { form: f, model: 'records' }
 
   = f.input :container_number_2, tooltip: I18n.t('records.container_number_2')
 
