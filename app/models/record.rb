@@ -11,15 +11,9 @@ class Record < ActiveRecord::Base
   has_and_belongs_to_many :spatial_coverages
   has_and_belongs_to_many :creators
   belongs_to :archival_container_format
+  belongs_to :archival_container2_format, foreign_key: 'archival_container2_format_id', class_name: 'ArchivalContainerFormat'
+  belongs_to :archival_container3_format, foreign_key: 'archival_container3_format_id', class_name: 'ArchivalContainerFormat'
  
   validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
-
-  def archival_container2_format
-      ArchivalContainerFormat.find(self.archival_container2_format_id)
-  end
-
-  def archival_container3_format
-      ArchivalContainerFormat.find(self.archival_container3_format_id)
-  end
 end
 
