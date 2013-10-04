@@ -14,15 +14,11 @@ class Record < ActiveRecord::Base
  
   validates :format_id,  :language_ids, :resource_type_id, :title, presence: true
 
-  def archival_contained_format
-      ArchivalContainerFormat.find(self.archival_container_format_id)
-  end
-
-  def archival_contained2_format
+  def archival_container2_format
       ArchivalContainer2Format.find(self.archival_container2_format_id)
   end
 
-  def archival_contained3_format
+  def archival_container3_format
       ArchivalContainer3Format.find(self.archival_container3_format_id)
   end
 end

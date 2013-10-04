@@ -44,12 +44,14 @@
 
   = f.input :container_number_1, tooltip: I18n.t('records.container_number_1')
 
-  = render partial: 'inputs/association',
-                    collection: [:archival_container2_format  ],
-                    as: :field,
-                    locals: { form: f, model: 'records' }
+  = f.association :archival_container_format, tooltip: I18n.t('record.archival_container_format'),
+                  input_html: { class: 'chosen-select', id: 'archival_container2_format_id', name: 'record[archival_container2_format_id]'}
 
   = f.input :container_number_2, tooltip: I18n.t('records.container_number_2')
+
+
+  = f.association :archival_container_format, tooltip: I18n.t('record.archival_container_format'),
+                  input_html: { class: 'chosen-select', id: 'archival_container3_format_id'}
 
   = f.input :container_number_3, tooltip: I18n.t('records.container_number_3')
 
