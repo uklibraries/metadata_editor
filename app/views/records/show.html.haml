@@ -13,15 +13,15 @@
 %ul
   %li
     %b Container List 1:
-    = @record.archival_container_format
+    = @record.archival_container_format.try(:name)
     = @record.container_number_1
   %li
     %b Container List 2:
-    = @record.archival_container2_format
+    = @record.archival_container2_format.try(:name)
     = @record.container_number_2
   %li
     %b Container List 3:
-    = @record.archival_container3_format
+    = @record.archival_container3_format.try(:name)
     = @record.container_number_3
 
 - if can? :edit, @record
