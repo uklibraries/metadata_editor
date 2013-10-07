@@ -19,6 +19,7 @@ class Seed
 end
 
 [
+  :archival_container_format,
   :format,
   :kentucky_topic,
   :repository, # TODO give repository its own seed method
