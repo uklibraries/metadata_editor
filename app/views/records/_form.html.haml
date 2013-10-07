@@ -35,28 +35,22 @@
   %p
     %b Recommended
 
-
-  = render partial: 'inputs/association',
-                    collection: [:archival_container_format  ],
-                    as: :field,
-                    locals: { form: f, model: 'records' }
-
+  = f.association :archival_container_format,
+                  tooltip: I18n.t("record.archival_container_format")
 
   = f.input :container_number_1, tooltip: I18n.t('records.container_number_1')
 
-  = render partial: 'inputs/association',
-                    collection: [:archival_container2_format  ],
-                    as: :field,
-                    locals: { form: f, model: 'records' }
+  .js-dependent-fields{:data => {:select_id => 'record_archival_container_format_id', :option_value => ArchivalContainerFormat.all.map(&:id).join('|')}}
+    = f.association :archival_container2_format,
+                    tooltip: I18n.t("record.archival_container_format")
 
-  = f.input :container_number_2, tooltip: I18n.t('records.container_number_2')
+    = f.input :container_number_2, tooltip: I18n.t('records.container_number_2')
 
-  = render partial: 'inputs/association',
-                    collection: [:archival_container3_format  ],
-                    as: :field,
-                    locals: { form: f, model: 'records' }
+    .js-dependent-fields{:data => {:select_id => 'record_archival_container2_format_id', :option_value => ArchivalContainerFormat.all.map(&:id).join('|')}}
+      = f.association :archival_container3_format,
+                      tooltip: I18n.t("record.archival_container_format")
 
-  = f.input :container_number_3, tooltip: I18n.t('records.container_number_3')
+      = f.input :container_number_3, tooltip: I18n.t('records.container_number_3')
 
   = f.input :description, tooltip: I18n.t('records.description')
   = f.input :publisher, tooltip: I18n.t('records.publisher')
