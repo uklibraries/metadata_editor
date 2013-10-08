@@ -1,5 +1,6 @@
 MetadataEditor::Application.routes.draw do
   devise_for :users
+  mount LcshSuggest::Engine, at: '/lcsh_suggest'
 
   resources :creators
   resources :repositories

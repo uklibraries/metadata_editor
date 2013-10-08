@@ -12,6 +12,34 @@ jQuery ->
     yearRange: 'c-100:c+10'
   DependentFields.bind()
 
+  # TODO: don't hardcode LCSH controller
+  $('input[name="record[subjects_used]"]').select2
+    placeholder: "Search for an LCSH term",
+    separator: '::'
+    id: (i) -> i.title
+    dropdownAutoWidth: true
+    minimumInputLength: 1
+    multiple: true
+    ajax:
+      url: '<%= "#{prefix}/lcsh_suggest/terms" %>'
+      dataType: 'json',
+      data: (term, page) ->
+        q: term
+      results: (data, page) ->
+        ret = data.map (term, index) -> {id: index, title: term}
+        results: ret
+    initSelection: (element, callback) ->
+      data = []
+      $(element.val().split("::")).each (i) ->
+        data.push
+          id: this
+          title: this
+      callback(data)
+    formatResult: (item) ->
+      item.title
+    formatSelection: (data) ->
+      data.title
+
   $('input[name="record[spatial_coverage_ids][]"]').siblings('.chosen-select').chosen
     width: '200px'
     no_results_text: "Add Spatial Coverage"
