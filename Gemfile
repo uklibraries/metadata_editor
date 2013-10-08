@@ -32,6 +32,7 @@ gem 'inherited_resources'
 gem 'lcsh_suggest'
 gem 'underscore-rails'
 gem 'dependent-fields-rails'
+gem 'select2-rails'
 
 gem 'simple_form'
 gem 'nokogiri'
