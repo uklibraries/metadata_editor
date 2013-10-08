@@ -35,9 +35,9 @@
   %p
     %b Recommended
 
-  = f.association :subjects, label: 'Library of Congress Subject Headings',
-                  tooltip: I18n.t("records.subjects"),
-                  input_html: {class: 'select2'}
+  = f.input :subjects, label: 'Library of Congress Subject Headings',
+            tooltip: I18n.t("records.subjects"),
+            input_html: { value: @record.subjects_used, id: 'record[subjects_used]', name: 'record[subjects_used]' }
 
   = render partial: 'inputs/association',
                     collection: [:spatial_coverages, :creators],
