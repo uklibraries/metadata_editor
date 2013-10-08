@@ -36,7 +36,8 @@
     %b Recommended
 
   = f.association :subjects, label: 'Library of Congress Subject Headings',
-                  tooltip: I18n.t("record.subjects")
+                  tooltip: I18n.t("records.subjects"),
+                  input_html: {class: 'select2'}
 
   = render partial: 'inputs/association',
                     collection: [:spatial_coverages, :creators],
@@ -44,19 +45,19 @@
                     locals: { form: f, model: 'records' }
 
   = f.association :archival_container_format, label: 'Archival container format 1',
-                  tooltip: I18n.t("record.archival_container_format")  
+                  tooltip: I18n.t("records.archival_container_format")
 
   = f.input :container_number_1, tooltip: I18n.t('records.container_number_1')
 
   .js-dependent-fields{:data => {:select_id => 'record_archival_container_format_id', :option_value => ArchivalContainerFormat.all.map(&:id).join('|')}}
     = f.association :archival_container2_format, label: 'Archival container format 2',
-                    tooltip: I18n.t("record.archival_container_format") 
+                    tooltip: I18n.t("records.archival_container_format") 
 
     = f.input :container_number_2, tooltip: I18n.t('records.container_number_2')
 
     .js-dependent-fields{:data => {:select_id => 'record_archival_container2_format_id', :option_value => ArchivalContainerFormat.all.map(&:id).join('|')}}
       = f.association :archival_container3_format, label: 'Archival container format 3',
-                      tooltip: I18n.t("record.archival_container_format")
+                      tooltip: I18n.t("records.archival_container_format")
 
       = f.input :container_number_3, tooltip: I18n.t('records.container_number_3')
 
