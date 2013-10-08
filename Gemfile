@@ -29,6 +29,7 @@ gem 'devise'
 gem 'haml'
 gem 'high_voltage'
 gem 'inherited_resources'
+gem 'lcsh_suggest'
 gem 'underscore-rails'
 gem 'dependent-fields-rails'
 
