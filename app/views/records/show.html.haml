@@ -1,14 +1,28 @@
 = render partial: 'fields/field',
-         collection: [:format, :kentucky_topics, :languages, :resource_type, :title, :creators, :date, :sources, :subjects, :repository, :description, :publisher, :series_statement, :spatial_coverages],
+         collection: [:format, :kentucky_topics, :languages, :resource_type, :title, :creators, :date, :sources, :subjects, :repository, :description, :publisher, :series_statement, :spatial_coverages  ],
          locals: { model: @record }
 
 = render partial: 'fields/field',
          locals: { model: @record, field: :retention }
 
 - if @record.retention_id == Retention.temporal.id
-  = render partial: 'fields/field', 
+  = render partial: 'fields/field',
            locals: { model: @record, field_label: 'Temporal date', field: :retention_date }
-    
+
+
+%p
+  %b Container list:
+  %ul
+    %li
+      = @record.archival_container_format.try(:name)
+      = @record.container_number_1
+    %li
+      = @record.archival_container2_format.try(:name)
+      = @record.container_number_2
+    %li
+      = @record.archival_container3_format.try(:name)
+      = @record.container_number_3
+
 - if can? :edit, @record
-  = link_to 'Edit', edit_record_path(@record) 
+  = link_to 'Edit', edit_record_path(@record)
 = link_to 'Back', records_path

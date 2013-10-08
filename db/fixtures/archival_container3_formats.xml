@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      DCMI ArchivalContainerFormats Vocabulary XML Schema
+
+      Created 2013-07-00
+
+      Created by
+
+      Eric Weig (eweig@email.uky.edu)
+
+
+      This schema defines a simpleArchivalContainerFormats which enumerates
+      the allowable values for the DCMI ArchivalContainerFormats Vocabulary for the Kentucky Digital Library.
+    </xs:documentation>
+
+
+  </xs:annotation>
+
+
+  <xs:simpleArchivalContainerFormats name="DCMIArchivalContainerFormats">
+     <xs:union>
+        <xs:simpleArchivalContainerFormats>
+           <xs:restriction base="xs:Name">
+                <xs:enumeration value="Box"/>
+                <xs:enumeration value="Folder"/>
+                <xs:enumeration value="Item"/>
+                <xs:enumeration value="Drawer"/>
+                <xs:enumeration value="Oversize box"/>
+                <xs:enumeration value="Folio"/> 
+                <xs:enumeration value="Audio"/>
+                <xs:enumeration value="Video"/>
+                <xs:enumeration value="Reel"/>
+                <xs:enumeration value="Volume"/>
+                <xs:enumeration value="Page"/>
+                <xs:enumeration value="Case"/>
+                <xs:enumeration value="Carton"/>
+            </xs:restriction>
+        </xs:simpleArchivalContainerFormats> 
+     </xs:union>
+  </xs:simpleArchivalContainerFormats>
+
+</xs:schema>
+

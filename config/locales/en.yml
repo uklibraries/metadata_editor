@@ -29,7 +29,7 @@ en:
     
     contributor: The person, agency or organization that contributed significantly or played an important role in creating the intellectual content of the resource other than the creator
     
-    archival_container: This field allows item level records to indicate a physical location within the contributing institution's holdings.
+    archival_container_format: This field allows item level records to indicate a physical location within the contributing institution's holdings.
    
     spatial_coverages: The World Geodetic System (WGS) is a standard for use in cartography, geodesy, and navigation. 
  
@@ -97,3 +97,9 @@ en:
     street_address: This is the street address for the repository.
 
     url: This is the URL for the repository's website.
+
+    container_number_1: The is the identifier for the container type.  
+
+    container_number_2: The is the identifier for the container type. 
+
+    container_number_3: The is the identifier for the container type. 
