@@ -35,8 +35,11 @@
   %p
     %b Recommended
 
+  = f.association :subjects, label: 'Library of Congress Subject Headings',
+                  tooltip: I18n.t("record.subjects")
+
   = render partial: 'inputs/association',
-                    collection: [:subjects, :spatial_coverages, :creators],
+                    collection: [:spatial_coverages, :creators],
                     as: :field,
                     locals: { form: f, model: 'records' }
 
