@@ -24,7 +24,6 @@ end
   :kentucky_topic,
   :repository, # TODO give repository its own seed method
   :resource_type,
-  :subject,
 ].each do |symbol|
   seed = Seed.new :symbol => symbol
   seed.plant
