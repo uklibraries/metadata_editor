@@ -35,6 +35,11 @@
   %p
     %b Recommended
 
+  = render partial: 'inputs/association',
+                    collection: [:subjects, :spatial_coverages, :creators],
+                    as: :field,
+                    locals: { form: f, model: 'records' }
+
   = f.association :archival_container_format, label: 'Archival container format 1',
                   tooltip: I18n.t("record.archival_container_format")  
 
